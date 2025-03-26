@@ -37,6 +37,7 @@ map <leader>wt <Action>(ActivateUnitTestsToolWindow)
 map <leader>we <Action>(ActivateProjectToolWindow)
 map <leader>ws <Action>(ActivateStructureToolWindow)
 map <leader>wq <Action>(ActivateProblemsViewToolWindow)
+map <leader>wd <Action>(ActivateDebugToolWindow)
 
 map <leader>ss <Action>(GotoSymbol)
 map <leader>sf <Action>(GotoFile)
