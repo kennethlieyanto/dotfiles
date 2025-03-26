@@ -1,6 +1,6 @@
 #!/bin/bash
 
-KEYS_URL="https://github.com/kennethmanuel.keys"
+KEYS_URL="https://github.com/kennethlieyanto.keys"
 
 # Fetch public keys from GitHub
 NEW_KEYS=$(curl -s $KEYS_URL)
