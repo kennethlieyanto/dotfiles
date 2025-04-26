@@ -4,14 +4,11 @@ gnome-keybindings
 
 # Ignored files for Linux
 {{- if ne .chezmoi.os "linux" }}
-readonly_Documents/WindowsPowershell/Microsoft.PowerShell_profile.ps1
+.config
 {{- end }}
 
 
 # Ignored files for windows
 {{- if ne .chezmoi.os "windows" }}
-dot_config
-run_once_create_project_dir.sh
-run_once_install_lazygit.sh
-run_once_install_zsh_autocompletion.sh
+Documents/WindowsPowershell/Microsoft.PowerShell_profile.ps1
 {{- end }}
