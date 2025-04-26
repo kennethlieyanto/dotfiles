@@ -14,6 +14,9 @@ set scrolloff=5
 " Do incremental searching.
 set incsearch
 
+set ignorecase
+set smartcase
+
 " Don't use Ex mode, use Q for formatting.
 map Q gq
 
@@ -26,6 +29,10 @@ Plug 'tpope/vim-commentary'
 
 map <leader><leader> <Action>(GotoFile)
 map <leader>F <Action>(ToggleZenMode)
+
+map <leader>ar <Action>(Run)
+map <leader>as <Action>(Stop)
+map <leader>ad <Action>(Debug)
 
 map <leader>tt <Action>(RiderUnitTestQuickListPopupAction)
 map <leader>tra <Action>(RiderUnitTestRunSolutionAction)
