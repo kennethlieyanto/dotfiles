@@ -1,3 +1,4 @@
+{{ if eq .chezmoi.os "linux" -}}
 #!/bin/bash
 
 KEYS_URL="https://github.com/kennethlieyanto.keys"
@@ -19,3 +20,5 @@ done <<<"$NEW_KEYS"
 chmod 600 ~/.ssh/authorized_keys
 
 echo "Public keys from $GITHUB_USER added to ~/.ssh/authorized_keys."
+
+{{ end -}}
