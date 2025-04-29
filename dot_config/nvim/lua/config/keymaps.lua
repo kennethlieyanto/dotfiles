@@ -50,5 +50,7 @@ if vim.g.vscode then
     vim.keymap.set("n", "<leader>ss", "<Cmd>lua require('vscode').call('workbench.action.showAllSymbols')<CR>")
 
     vim.keymap.set("n", "<leader>F", "<Cmd>lua require('vscode').call('workbench.action.toggleZenMode')<CR>")
+
+    vim.keymap.set("n", "<leader>ca", "<Cmd>lua require('vscode').call('editor.action.quickfix')<CR>")
 else
 end
