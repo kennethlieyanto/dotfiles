@@ -26,4 +26,3 @@ New-Alias -Name o -Value start
 New-Alias -Name ghd -Value Run-GhDash
 
 Invoke-Expression (& { (zoxide init powershell | Out-String) })
-Invoke-Expression (&starship init powershell)
