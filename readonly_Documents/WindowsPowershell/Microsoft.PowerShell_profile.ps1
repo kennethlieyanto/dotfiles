@@ -27,5 +27,3 @@ New-Alias -Name ghd -Value Run-GhDash
 
 Invoke-Expression (& { (zoxide init powershell | Out-String) })
 Invoke-Expression (&starship init powershell)
-
-if ( Test-Path '~/.inshellisense/powershell/init.ps1' -PathType Leaf ) { . ~/.inshellisense/powershell/init.ps1 }
