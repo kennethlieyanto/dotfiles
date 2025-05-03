@@ -10,3 +10,4 @@ alias lzd='lazydocker'
 alias t='task'
 alias dwr="dotnet watch run"
 alias dr="dotnet run"
+alias x="exercism"
