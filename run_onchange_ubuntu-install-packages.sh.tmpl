@@ -1,9 +1,9 @@
-{{ if eq .osid "linux-fedora" -}}
+{{ if eq .osid "linux-ubuntu" -}}
 #!/bin/bash
 
 # Install DNF packages
 {{ range .packages.fedora.dnf -}}
-sudo dnf install -y {{ . | quote }}
+sudo apt install -y {{ . | quote }}
 {{ end -}}
 
 {{ end -}}

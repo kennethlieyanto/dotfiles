@@ -9,3 +9,12 @@ packages:
       - "btop"
       - "zoxide"
       - "zsh"
+  ubuntu:
+    apt:
+      - "git"
+      - "fzf"
+      - "tmux"
+      - "ripgrep"
+      - "btop"
+      - "zoxide"
+      - "zsh"
