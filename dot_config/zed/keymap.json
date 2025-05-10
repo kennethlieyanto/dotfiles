@@ -1,0 +1,24 @@
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-.": "zed::OpenKeymap",
+      "ctrl-k": "workspace::CloseAllDocks",
+      "ctrl-shift-h": "pane::GoBack",
+      "ctrl-shift-l": "pane::GoForward",
+      "ctrl-`": "workspace::ToggleBottomDock"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-.": "zed::OpenKeymap",
+      "ctrl-k": "workspace::CloseAllDocks",
+      "space space": "file_finder::Toggle",
+      "space w e": "project_panel::ToggleFocus",
+      "space w s": "outline_panel::ToggleFocus",
+      "space w x": "zed::Extensions",
+      "ctrl-h": null
+    }
+  }
+]
