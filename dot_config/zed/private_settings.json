@@ -20,6 +20,7 @@
     "diagnostics": true
   },
   "ui_font_size": 17,
+  "ui_font_family": "Cantarell",
   "buffer_font_size": null,
   "theme": {
     "mode": "system",
