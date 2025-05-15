@@ -18,20 +18,25 @@ other_directories=(
 if [[ $# -eq 1 ]]; then
   selected=$1
 else
-  command="find"
-
+  # Build find command with only existing directories
+  find_dirs=()
   for dir in "${project_directories[@]}"; do
-    command+=" $dir"
+    expanded_dir=$(eval echo "$dir")
+    if [[ -d $expanded_dir ]]; then
+      find_dirs+=("$expanded_dir")
+    fi
   done
 
-  command+=" -mindepth 1 -maxdepth 1 -type d"
-
-  # Find the directories in project_directories
-  project_results=$(eval "$command")
+  if [[ ${#find_dirs[@]} -gt 0 ]]; then
+    project_results=$(find "${find_dirs[@]}" -mindepth 1 -maxdepth 1 -type d 2>/dev/null)
+  else
+    project_results=""
+  fi
 
   # Add the other_directories directly
   for dir in "${other_directories[@]}"; do
-    project_results+="\n$dir"
+    expanded_dir=$(eval echo "$dir")
+    project_results+=$'\n'"$expanded_dir"
   done
 
   # Use fzf to select from combined list
