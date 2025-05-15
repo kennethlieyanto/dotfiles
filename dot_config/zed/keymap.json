@@ -14,14 +14,19 @@
     "bindings": {
       "ctrl-.": "zed::OpenKeymap",
       "ctrl-k": "workspace::CloseAllDocks",
+      "ctrl-h": null
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
       "space space": "file_finder::Toggle",
       "space w e": "project_panel::ToggleFocus",
       "space w s": "outline_panel::ToggleFocus",
       "space w x": "zed::Extensions",
       "space w g": "git_panel::ToggleFocus",
       "space F": "workspace::ToggleCenteredLayout",
-      "space /": "pane::DeploySearch",
-      "ctrl-h": null
+      "space /": "pane::DeploySearch"
     }
   }
 ]
