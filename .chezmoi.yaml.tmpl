@@ -2,7 +2,7 @@
 
 {{- $osid := .chezmoi.os -}}
 {{- if hasKey .chezmoi.osRelease "id" -}}
-{{-   $osid = printf "%s-%s" .chezmoi.os .chezmoi.osRelease.id -}}
+{{-   $osid = printf "%s-%s-%s" .chezmoi.os .chezmoi.osRelease.id .chezmoi.osRelease.variantID-}}
 {{- end -}}
 
 data:
