@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# Only compile if terminfo is missing
+if ! infocmp xterm-ghostty >/dev/null 2>&1; then
+  tic -x "{{ .chezmoi.sourceDir }}/xterm-ghostty.terminfo"
+fi
