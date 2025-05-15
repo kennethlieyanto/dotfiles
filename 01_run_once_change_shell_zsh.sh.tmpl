@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Path to zsh
+ZSH_PATH=$(which zsh)
+
+# Check if zsh is installed
+if [ -z "$ZSH_PATH" ]; then
+  echo "zsh is not installed. Please install it first."
+  exit 1
+fi
+
+# Change the default shell to zsh
+echo "Changing shell to zsh ($ZSH_PATH)..."
+chsh -s "$ZSH_PATH"
+
+# Confirm the change
+if [ $? -eq 0 ]; then
+  echo "Shell successfully changed to zsh. Please log out and log back in to apply the change."
+else
+  echo "Failed to change the shell."
+fi
