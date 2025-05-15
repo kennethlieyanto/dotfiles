@@ -4,12 +4,12 @@ font-size = 13
 
 theme = catppuccin-mocha.conf
 
-keybind = ctrl+a>c=new_tab
-keybind = ctrl+a>shift+5=new_split:right
-keybind = ctrl+a>shift+'=new_split:down
-keybind = ctrl+a>x=close_surface
+keybind = alt+shift+c=new_tab
+keybind = alt+shift+5=new_split:right
+keybind = alt+shift+'=new_split:down
+keybind = alt+shift+x=close_surface
 
-keybind = ctrl+a>h=goto_split:left
-keybind = ctrl+a>j=goto_split:down
-keybind = ctrl+a>k=goto_split:up
-keybind = ctrl+a>l=goto_split:right
+keybind = shift+left=goto_split:left
+keybind = shift+down=goto_split:down
+keybind = shift+up=goto_split:up
+keybind = shift+right=goto_split:right
