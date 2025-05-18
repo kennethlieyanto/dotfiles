@@ -17,8 +17,12 @@ set incsearch
 set ignorecase
 set smartcase
 
+set visualbell
+set noerrorbells
+
 " Don't use Ex mode, use Q for formatting.
 map Q gq
+
 
 " --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
 
@@ -45,6 +49,7 @@ map <leader>we <Action>(ActivateProjectToolWindow)
 map <leader>ws <Action>(ActivateStructureToolWindow)
 map <leader>wq <Action>(ActivateProblemsViewToolWindow)
 map <leader>wd <Action>(ActivateDebugToolWindow)
+map <leader>wx <Action>(WelcomeScreen.Plugins)
 
 map <leader>ss <Action>(GotoSymbol)
 map <leader>sf <Action>(GotoFile)
@@ -65,5 +70,11 @@ map K <Action>(ShowHoverInfo)
 
 map <leader>cf <Action>(ReformatCode)
 map gra <Action>(ShowIntentionActions)
+map grn <Action>(RenameElement)
+map gri <Action>(ReSharperGotoImplementation)
+
+imap <C-s> <Action>(ParameterInfo)
+
+map <leader>mdp <Action>(TextEditorWithPreview.Layout.PreviewOnly)
 
 command! Q action CloseAllEditors
