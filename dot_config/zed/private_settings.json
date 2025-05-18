@@ -7,6 +7,18 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "ssh_connections": [
+    {
+      "host": "fedora-server",
+      "projects": [
+        {
+          "paths": [
+            "/home/kennethl/Projects/personal/personal-lab"
+          ]
+        }
+      ]
+    }
+  ],
   "icon_theme": "JetBrains New UI Icons (Dark)",
   "outline_panel": {
     "dock": "right"
