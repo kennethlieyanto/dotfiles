@@ -12,9 +12,7 @@
       "host": "fedora-server",
       "projects": [
         {
-          "paths": [
-            "/home/kennethl/Projects/personal/personal-lab"
-          ]
+          "paths": ["/home/kennethl/Projects/personal/personal-lab"]
         }
       ]
     }
@@ -57,5 +55,6 @@
     "modal_max_width": "medium"
   },
   "use_smartcase_search": true,
-  "project_panel": {}
+  "project_panel": {},
+  "autosave": "on_focus_change"
 }
