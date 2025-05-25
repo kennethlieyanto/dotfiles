@@ -48,3 +48,4 @@ function y() {
 }
 
 export PATH=$PATH:/home/kennethl/.spicetify
+export CHROME_EXECUTABLE=/usr/bin/brave-browser
