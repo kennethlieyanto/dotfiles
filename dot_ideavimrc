@@ -50,6 +50,7 @@ map <leader>ws <Action>(ActivateStructureToolWindow)
 map <leader>wq <Action>(ActivateProblemsViewToolWindow)
 map <leader>wd <Action>(ActivateDebugToolWindow)
 map <leader>wx <Action>(WelcomeScreen.Plugins)
+map <leader>wr <Action>(ActivateRunToolWindow)
 map <leader>wdb <Action>(ActivateDatabaseToolWindow)
 
 map <leader>ss <Action>(GotoSymbol)
