@@ -51,6 +51,7 @@ map <leader>wq <Action>(ActivateProblemsViewToolWindow)
 map <leader>wd <Action>(ActivateDebugToolWindow)
 map <leader>wx <Action>(WelcomeScreen.Plugins)
 map <leader>wr <Action>(ActivateRunToolWindow)
+map <leader>wn <Action>(ActivateNotificationsToolWindow)
 map <leader>wdb <Action>(ActivateDatabaseToolWindow)
 
 map <leader>ss <Action>(GotoSymbol)
@@ -76,6 +77,7 @@ map grn <Action>(RenameElement)
 map gri <Action>(ReSharperGotoImplementation)
 
 imap <C-s> <Action>(ParameterInfo)
+map <C-k> <Action>(HideAllWindows)
 
 map <leader>mdp <Action>(TextEditorWithPreview.Layout.PreviewOnly)
 
