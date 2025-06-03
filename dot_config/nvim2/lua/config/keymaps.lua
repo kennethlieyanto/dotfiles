@@ -27,6 +27,7 @@ if vim.g.vscode then
 	vim.keymap.set("n", "<leader>5", "<Cmd>lua require('vscode').call('vscode-harpoon.gotoEditor5')<CR>")
 	vim.keymap.set("n", "<leader>hh", "<Cmd>lua require('vscode').call('vscode-harpoon.editEditors')<CR>")
 	vim.keymap.set("n", "<leader>we", "<Cmd>lua require('vscode').call('workbench.view.explorer')<CR>")
+	vim.keymap.set("n", "<leader>ws", "<Cmd>lua require('vscode').call('outline.focus')<CR>")
 	vim.keymap.set("n", "<leader>wt", "<Cmd>lua require('vscode').call('workbench.view.testing.focus')<CR>")
 	vim.keymap.set("n", "<leader>wx",
 		"<Cmd>lua require('vscode').call('workbench.extensions.action.focusExtensionsView')<CR>")
@@ -39,5 +40,7 @@ if vim.g.vscode then
 	vim.keymap.set("n", "<leader>ss", "<Cmd>lua require('vscode').call('workbench.action.showAllSymbols')<CR>")
 	vim.keymap.set("n", "<leader>F", "<Cmd>lua require('vscode').call('workbench.action.toggleZenMode')<CR>")
 	vim.keymap.set("n", "<leader>llm", "<Cmd>lua require('vscode').call('composer.newAgentChat')<CR>")
+	vim.keymap.set("n", "gra", "<Cmd>lua require('vscode').call('editor.action.quickFix')<CR>")
+	vim.keymap.set("n", "<leader>ar", "<Cmd>lua require('vscode').call('flutter.runProfileMode')<CR>")
 else
 end
