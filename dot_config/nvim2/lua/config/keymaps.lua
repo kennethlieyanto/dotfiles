@@ -42,5 +42,7 @@ if vim.g.vscode then
 	vim.keymap.set("n", "<leader>llm", "<Cmd>lua require('vscode').call('composer.newAgentChat')<CR>")
 	vim.keymap.set("n", "gra", "<Cmd>lua require('vscode').call('editor.action.quickFix')<CR>")
 	vim.keymap.set("n", "<leader>ar", "<Cmd>lua require('vscode').call('flutter.runProfileMode')<CR>")
+	vim.keymap.set("n", "<leader>/", "<Cmd>lua require('vscode').call('workbench.view.search')<CR>")
+	vim.keymap.set("n", "<leader><leader>", "<Cmd>lua require('vscode').call('workbench.action.quickOpen')<CR>")
 else
 end
