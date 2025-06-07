@@ -2,11 +2,17 @@ exec dbus-update-activation-environment --all
 exec gnome-keyring-daemon --start --components=secrets
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
-for_window [class="^.*"] border pixel 1
+# Window border and font colors
+client.focused          #555555 #555555 #ffffff #555555 #555555
+client.unfocused        #444444 #222222 #888888 #292d3e #222222
+client.focused_inactive #333333 #222222 #aaaaaa #292d3e #222222
+client.urgent           #ff0000 #900000 #ffffff #ff0000 #900000
+
+for_window [class="^.*"] border pixel 3
 hide_edge_borders smart
 
 # font pango:monospace 8
-font pango:Noto Sans Mono 12
+font pango:Noto Sans Mono 9
 
 # bar {
 #   status_command i3status
