@@ -1,9 +1,27 @@
 {{ if eq .chezmoi.osRelease.id "fedora" -}}
 #!/bin/bash
+set -euo pipefail
 
-# Install DNF packages
+# Install DNF base packages
 {{ range .packages.fedora.dnf -}}
 sudo dnf install -y {{ . | quote }}
-{{ end -}}
+{{ end }}
+
+# Enable Copr repos
+{{ range .packages.fedora.copr -}}
+sudo dnf copr enable -y {{ . | quote }}
+{{ end }}
+
+# Install packages from Copr
+{{ range .packages.fedora.coprPackages -}}
+sudo dnf install -y {{ . | quote }}
+{{ end }}
+
+# Add external repositories and install packages
+{{ range .packages.fedora.externalRepos -}}
+sudo dnf config-manager addrepo --from-repofile={{ .repo | quote }} --overwrite
+sudo dnf install -y {{ .package }}
+{{ end }}
 
 {{ end -}}
+

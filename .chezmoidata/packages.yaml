@@ -9,3 +9,27 @@ packages:
       - "btop"
       - "zoxide"
       - "zsh"
+      - "flatpak"
+      - "rofi"
+      - "arandr"
+    copr:
+      - "pgdev/ghostty"
+      - "alternateved/keyd"
+      - "atim/lazygit"
+    coprPackages:
+      - "ghostty"
+      - "keyd"
+      - "lazygit"
+    externalRepos:
+      - name: "brave-browser"
+        repo: "https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo"
+        package: "brave-browser"
+      - name: "polychromatic"
+        repo: "https://openrazer.github.io/hardware:razer.repo"
+        package: "polychromatic"
+    flatpak:
+      - "com.spotify.Client"
+      - "com.discordapp.Discord"
+      - "org.gnome.World.PikaBackup"
+      - "md.obsidian.Obsidian"
+      

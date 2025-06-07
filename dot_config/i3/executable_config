@@ -1,14 +1,3 @@
-exec dbus-update-activation-environment --all
-exec gnome-keyring-daemon --start --components=secrets
-exec --no-startup-id pasystray
-exec --no-startup-id nitrogen --restore
-exec --no-startup-id nm-applet
-exec --no-startup-id polychromatic-tray-applet
-exec --no-startup-id spotify
-exec --no-startup-id discord
-exec --no-startup-id picom -b
-exec --no-startup-id obsidian
-
 for_window [class="^.*"] border pixel 1
 hide_edge_borders smart
 
@@ -155,39 +144,16 @@ assign [class="amberol"] $wsc
 assign [class="elisa"] $wsc
 assign [class="pavucontrol"] $wss
 
-bindsym $mod+Return exec --no-startup-id alacritty
+bindsym $mod+Return exec --no-startup-id ghostty
 bindsym $mod+Shift+Return exec thunar
-bindsym $mod+b exec firefox
-bindsym $mod+period exec gnome-characters
-
-bindsym $mod+t exec --no-startup-id "alacritty --class custom_tasktui -e taskwarrior-tui"
-for_window [instance="custom_tasktui"] floating enable
-for_window [instance="custom_tasktui"] resize set 1280 720
-for_window [instance="custom_tasktui"] move position center
-for_window [instance="custom_tasktui"] border pixel 3
-
-bindsym $mod+m exec --no-startup-id "alacritty --class custom_btop -e btop" 
-for_window [instance="custom_btop"] floating enable
-for_window [instance="custom_btop"] resize set 1600 900
-for_window [instance="custom_btop"] move position center
-for_window [instance="custom_btop"] border pixel 3
-
-bindsym $mod+Shift+o exec --no-startup-id "alacritty --class custom_ranger -e zsh -i -c 'ranger-fzf-opener'"
-for_window [instance="custom_ranger"] floating enable
-for_window [instance="custom_ranger"] resize set 1280 720
-for_window [instance="custom_ranger"] move position center
-for_window [instance="custom_ranger"] border pixel 3
-
-bindsym $mod+o exec --no-startup-id "alacritty --class custom_ranger -e zsh -i -c 'ranger'"
-for_window [instance="custom_ranger"] floating enable
-for_window [instance="custom_ranger"] resize set 1280 720
-for_window [instance="custom_ranger"] move position center
-for_window [instance="custom_ranger"] border pixel 3
+bindsym $mod+b exec brave-browser
+bindsym $mod+period exec --no-startup-id
 
 bindsym $mod+Shift+r restart
 
 bindsym $mod+space exec --no-startup-id "rofi -show drun -theme ~/.dotfiles/rofi/.config/rofi/material.rasi"
-bindsym $mod+d exec --no-startup-id "rofi -show run -theme ~/.dotfiles/rofi/.config/rofi/material.rasi"
+# bindsym $mod+d exec --no-startup-id "rofi -show run -theme ~/.dotfiles/rofi/.config/rofi/material.rasi"
+bindsym $mod+d exec --no-startup-id "rofi -show drun"
 bindsym Print exec --no-startup-id ~/.config/rofi/applets/bin/screenshot.sh
 
 mode "Passthrough Mode - Mod+Esc to exit" {
