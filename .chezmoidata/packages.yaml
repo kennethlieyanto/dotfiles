@@ -12,14 +12,18 @@ packages:
       - "flatpak"
       - "rofi"
       - "arandr"
+      - "maim"
+      - "xclip"
     copr:
       - "pgdev/ghostty"
       - "alternateved/keyd"
       - "atim/lazygit"
+      - "lihaohong/yazi"
     coprPackages:
       - "ghostty"
       - "keyd"
       - "lazygit"
+      - "yazi"
     externalRepos:
       - name: "brave-browser"
         repo: "https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo"
