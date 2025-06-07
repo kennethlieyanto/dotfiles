@@ -1,4 +1,4 @@
-{{ if eq .chezmoi.osRelease.variantID "workstation" -}}
+{{ if eq .chezmoi.os "linux" -}}
 #!/bin/bash
 
 mkdir -p "$HOME/Projects/work" 2>/dev/null
