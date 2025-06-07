@@ -1,0 +1,175 @@
+/**
+ * Pure Black Rofi Theme
+ * Compact height, wide layout with white text on black background
+ */
+
+* {
+    background-color: #000000;
+    text-color: #ffffff;
+    border-color: #333333;
+    separatorcolor: #333333;
+    selected-normal-background: #222222;
+    selected-normal-foreground: #ffffff;
+    normal-background: #000000;
+    normal-foreground: #ffffff;
+    alternate-normal-background: #000000;
+    alternate-normal-foreground: #ffffff;
+    selected-urgent-background: #000000;
+    selected-urgent-foreground: #ffffff;
+    urgent-background: #000000;
+    urgent-foreground: #ffffff;
+    selected-active-background: #222222;
+    selected-active-foreground: #ffffff;
+    active-background: #000000;
+    active-foreground: #ffffff;
+    alternate-urgent-background: #000000;
+    alternate-urgent-foreground: #ffffff;
+    alternate-active-background: #000000;
+    alternate-active-foreground: #ffffff;
+}
+
+window {
+    transparency: "real";
+    location: center;
+    anchor: center;
+    fullscreen: false;
+    width: 60%;
+    x-offset: 0px;
+    y-offset: 0px;
+    background-color: #000000;
+    border: 1px;
+    border-color: #333333;
+    border-radius: 0px;
+}
+
+mainbox {
+    background-color: #000000;
+    spacing: 0px;
+    children: [inputbar, listview];
+}
+
+inputbar {
+    background-color: #000000;
+    text-color: #ffffff;
+    padding: 8px 12px;
+    border: 0px 0px 1px 0px;
+    border-color: #333333;
+    spacing: 0px;
+    children: [prompt, textbox-prompt-colon, entry];
+}
+
+prompt {
+    background-color: #000000;
+    text-color: #ffffff;
+    padding: 0px 8px 0px 0px;
+}
+
+textbox-prompt-colon {
+    background-color: #000000;
+    text-color: #ffffff;
+    expand: false;
+    str: ":";
+    margin: 0px 4px 0px 0px;
+}
+
+entry {
+    background-color: #000000;
+    text-color: #ffffff;
+    placeholder-color: #666666;
+    expand: true;
+    horizontal-align: 0;
+    placeholder: "Search...";
+    cursor: text;
+}
+
+listview {
+    background-color: #000000;
+    padding: 4px 0px 0px 0px;
+    dynamic: true;
+    scrollbar: false;
+    layout: vertical;
+    reverse: false;
+    fixed-height: true;
+    fixed-columns: true;
+    lines: 8;
+    columns: 1;
+    spacing: 0px;
+    cycle: true;
+}
+
+element {
+    background-color: #000000;
+    text-color: #ffffff;
+    orientation: horizontal;
+    border-radius: 0px;
+    padding: 6px 12px;
+    border: 0px;
+    spacing: 8px;
+}
+
+element normal.normal {
+    background-color: #000000;
+    text-color: #ffffff;
+}
+
+element normal.urgent {
+    background-color: #000000;
+    text-color: #ffffff;
+}
+
+element normal.active {
+    background-color: #000000;
+    text-color: #ffffff;
+}
+
+element selected.normal {
+    background-color: #222222;
+    text-color: #ffffff;
+    border: 0px;
+}
+
+element selected.urgent {
+    background-color: #222222;
+    text-color: #ffffff;
+}
+
+element selected.active {
+    background-color: #222222;
+    text-color: #ffffff;
+}
+
+element alternate.normal {
+    background-color: #000000;
+    text-color: #ffffff;
+}
+
+element alternate.urgent {
+    background-color: #000000;
+    text-color: #ffffff;
+}
+
+element alternate.active {
+    background-color: #000000;
+    text-color: #ffffff;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+    highlight: bold #ffffff;
+    cursor: inherit;
+}
+
+element-icon {
+    background-color: transparent;
+    size: 1.0000em;
+    cursor: inherit;
+}
+
+scrollbar {
+    width: 0px;
+    border: 0px;
+    handle-color: #333333;
+    handle-width: 0px;
+    padding: 0px;
+}
