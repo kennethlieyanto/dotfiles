@@ -58,12 +58,8 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
-set $wsz "11"
-set $wsx "12"
-set $wsc "13"
-set $wsg "14"
-set $wsq "15"
-set $wss "16"
+set $ws11 "11"
+set $ws12 "12"
 
 workspace 1 output $pm
 workspace 2 output $pm
@@ -74,46 +70,35 @@ workspace 6 output $pm
 workspace 7 output $pm
 workspace 8 output $pm
 workspace 9 output $pm
-workspace 10 output $sm
-workspace "z" output $pm
-workspace "x" output $pm
-workspace "c" output $pm
-workspace "g" output $pm
-workspace "q" output $pm
-workspace "s" output $pm
+workspace 10 output $pm
+workspace 11 output $sm
+workspace 12 output $sm
 
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
 bindsym $mod+3 workspace number $ws3
 bindsym $mod+4 workspace number $ws4
 bindsym $mod+5 workspace number $ws5
-bindsym $mod+6 workspace number $ws6
-bindsym $mod+7 workspace number $ws7
-bindsym $mod+8 workspace number $ws8
-bindsym $mod+9 workspace number $ws9
-bindsym $mod+0 workspace number $ws10
-bindsym $mod+z workspace $wsz
-bindsym $mod+x workspace $wsx
-bindsym $mod+g workspace $wsg
-bindsym $mod+c workspace $wsc
-bindsym $mod+q workspace $wsq
-bindsym $mod+s workspace $wss
+bindsym $mod+z workspace number $ws6
+bindsym $mod+x workspace number $ws7
+bindsym $mod+c workspace number $ws8
+bindsym $mod+v workspace number $ws9
+bindsym $mod+g workspace number $ws10
+bindsym $mod+9 workspace number $ws11
+bindsym $mod+0 workspace number $ws11
 
 bindsym $mod+Shift+1 move container to workspace number $ws1
 bindsym $mod+Shift+2 move container to workspace number $ws2
 bindsym $mod+Shift+3 move container to workspace number $ws3
 bindsym $mod+Shift+4 move container to workspace number $ws4
 bindsym $mod+Shift+5 move container to workspace number $ws5
-bindsym $mod+Shift+6 move container to workspace number $ws2
-bindsym $mod+Shift+7 move container to workspace number $ws3
-bindsym $mod+Shift+8 move container to workspace number $ws8
-bindsym $mod+Shift+9 move container to workspace number $ws9
-bindsym $mod+Shift+0 move container to workspace number $ws10
-bindsym $mod+Shift+z move container to workspace $wsz
-bindsym $mod+Shift+x move container to workspace $wsx
-bindsym $mod+Shift+g move container to workspace $wsg
-bindsym $mod+Shift+c move container to workspace $wsc
-bindsym $mod+Shift+s move container to workspace $wss
+bindsym $mod+Shift+z move container to workspace number $ws2
+bindsym $mod+Shift+x move container to workspace number $ws3
+bindsym $mod+Shift+c move container to workspace number $ws8
+bindsym $mod+Shift+v move container to workspace number $ws9
+bindsym $mod+Shift+g move container to workspace number $ws10
+bindsym $mod+Shift+9 move container to workspace number $ws11
+bindsym $mod+Shift+0 move container to workspace number $ws12
 
 mode "resize" {
   bindsym h resize shrink width 10 px or 10 ppt
@@ -132,22 +117,18 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-assign [class="obsidian"] $wsg
-assign [class="calibre"] $wsz
-assign [class="discord"] $wsx
-assign [class="steam"] $wsz
-assign [class="dota2"] $wsz
-assign [class="osu!"] $wsz
-assign [class="Spotify"] $wsc
-assign [class="Rhythmbox"] $wsc
-assign [class="amberol"] $wsc
-assign [class="elisa"] $wsc
-assign [class="pavucontrol"] $wss
+assign [class="obsidian"] $ws10
+assign [class="discord"] $ws7
+assign [class="steam"] $ws5
+assign [class="dota2"] $ws5
+assign [class="osu!"] $ws5
+assign [class="Spotify"] $ws8
+assign [class="pavucontrol"] $ws8
 
 bindsym $mod+Return exec --no-startup-id ghostty
 bindsym $mod+Shift+Return exec thunar
 bindsym $mod+b exec brave-browser
-bindsym $mod+period exec --no-startup-id
+bindsym $mod+period exec --no-startup-id "ghostty -e 'nvim ~/.config/i3/config'"
 
 bindsym $mod+Shift+r restart
 
@@ -162,4 +143,4 @@ mode "Passthrough Mode - Mod+Esc to exit" {
 bindsym $mod+Escape mode "Passthrough Mode - Mod+Esc to exit"
 
 exec --no-startup-id i3-msg "workspace 1; move workspace to output $pm"
-exec --no-startup-id i3-msg "workspace 10; move workspace to output $sm"
+exec --no-startup-id i3-msg "workspace 11; move workspace to output $sm"
