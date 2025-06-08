@@ -1,5 +1,7 @@
 exec dbus-update-activation-environment --all
 exec gnome-keyring-daemon --start --components=secrets
+exec --no-startup-id /usr/libexec/xdg-desktop-portal-gnome
+# exec --no-startup-id /usr/libexec/xdg-desktop-portal
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id nitrogen --restore &
 
