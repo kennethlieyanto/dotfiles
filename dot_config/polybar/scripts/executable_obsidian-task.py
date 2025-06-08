@@ -46,7 +46,7 @@ def select_vault_with_rofi():
     
     try:
         result = subprocess.run(
-            ['rofi', '-dmenu', '-p', 'Select Vault:', '-format', 's'],
+            ['rofi', '-dmenu', '-p', 'Select Vault:', '-format', 's', '-theme', '~/.config/rofi/style.rasi'],
             input='\n'.join(vaults),
             text=True,
             capture_output=True,

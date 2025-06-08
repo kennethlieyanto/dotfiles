@@ -146,6 +146,7 @@ bindsym $mod+Shift+r restart
 
 bindsym $mod+space exec --no-startup-id "rofi -show drun -theme ~/.dotfiles/rofi/.config/rofi/material.rasi"
 bindsym $mod+d exec --no-startup-id "rofi -show drun -theme ~/.config/rofi/style.rasi"
+bindsym $mod+t exec --no-startup-id "python3 ~/.config/polybar/scripts/obsidian-task.py --switch"
 
 mode "Passthrough Mode - Mod+Esc to exit" {
   bindsym $mod+Escape mode "default"
