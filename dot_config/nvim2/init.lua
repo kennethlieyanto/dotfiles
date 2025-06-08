@@ -43,5 +43,5 @@ function Open_lazygit()
   vim.cmd("startinsert")
 end
 
-vim.api.nvim_set_keymap("n", "<leader>wg", "<cmd>lua Open_lazygit()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>gg", "<cmd>lua Open_lazygit()<CR>", { noremap = true, silent = true })
 
