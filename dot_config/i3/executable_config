@@ -1,6 +1,7 @@
 exec dbus-update-activation-environment --all
 exec gnome-keyring-daemon --start --components=secrets
 exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec_always --no-startup-id nitrogen --restore &
 
 # Window border and font colors
 client.focused          #555555 #555555 #ffffff #555555 #555555
@@ -11,9 +12,10 @@ client.urgent           #ff0000 #900000 #ffffff #ff0000 #900000
 for_window [class="^.*"] border pixel 3
 hide_edge_borders smart
 
-# font pango:monospace 8
+font pango:monospace 8
 font pango:Noto Sans Mono 9
 
+# UNCOMMENT IF IN A VERY MINIMAL SYSTEM AND POLYBAR IS NOT NEEDED
 # bar {
 #   status_command i3status
 # }
@@ -22,7 +24,7 @@ set $mod mod4
 floating_modifier $mod
 
 bindsym $mod+w layout tabbed
-# bindsym $mod+e layout toggle split
+bindsym $mod+e layout toggle split
 
 bindsym $mod+Shift+q kill
 bindsym $mod+f fullscreen toggle
@@ -55,7 +57,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+Shift+bar split h
 bindsym $mod+minus split v
 
-set $pm DP-0s
+set $pm DP-0
 set $sm HDMI-0
 
 set $ws1 "1"
@@ -127,24 +129,23 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-assign [class="obsidian"] $ws10
-assign [class="discord"] $ws7
 assign [class="steam"] $ws5
 assign [class="dota2"] $ws5
 assign [class="osu!"] $ws5
+assign [class="discord"] $ws7
 assign [class="Spotify"] $ws8
 assign [class="pavucontrol"] $ws8
+assign [class="obsidian"] $ws10
 
 bindsym $mod+Return exec --no-startup-id ghostty
-bindsym $mod+e exec thunar
+bindsym $mod+Shift+Return exec thunar
 bindsym $mod+b exec brave-browser
-bindsym $mod+period exec --no-startup-id "ghostty -e 'nvim ~/.config/i3/config'"
+bindsym $mod+comma exec --no-startup-id "ghostty -e 'nvim ~/.config/i3/config'"
 
 bindsym $mod+Shift+r restart
 
 bindsym $mod+space exec --no-startup-id "rofi -show drun -theme ~/.dotfiles/rofi/.config/rofi/material.rasi"
-# bindsym $mod+d exec --no-startup-id "rofi -show run -theme ~/.dotfiles/rofi/.config/rofi/material.rasi"
-bindsym $mod+d exec --no-startup-id "rofi -show drun"
+bindsym $mod+d exec --no-startup-id "rofi -show drun -theme ~/.config/rofi/style.rasi"
 
 mode "Passthrough Mode - Mod+Esc to exit" {
   bindsym $mod+Escape mode "default"
