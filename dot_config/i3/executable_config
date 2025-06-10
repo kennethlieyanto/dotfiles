@@ -59,6 +59,9 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+Shift+bar split h
 bindsym $mod+minus split v
 
+bindsym Mod1+Shift+Tab focus prev sibling
+bindsym Mod1+Tab focus next sibling
+ 
 set $pm DP-0
 set $sm HDMI-0
 
