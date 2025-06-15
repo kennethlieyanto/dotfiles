@@ -31,6 +31,9 @@ packages:
       - name: "polychromatic"
         repo: "https://openrazer.github.io/hardware:razer.repo"
         package: "polychromatic"
+      - name: "gh-cli"
+        repo: "https://cli.github.com/packages/rpm/gh-cli.repo"
+        package: "gh"
     flatpak:
       - "com.spotify.Client"
       - "com.discordapp.Discord"
