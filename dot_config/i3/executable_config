@@ -63,16 +63,19 @@ bindsym $mod+minus split v
 
 # bindsym Mod1+Shift+Tab focus prev sibling
 # bindsym Mod1+Tab focus next sibling
+
+bindsym Mod1+Shift+Tab exec sibling_wrap.py prev
+bindsym Mod1+Tab exec sibling_wrap.py next
  
-bindsym Mod1+1 exec focus_tab.py 1
-bindsym Mod1+2 exec focus_tab.py 2
-bindsym Mod1+3 exec focus_tab.py 3
-bindsym Mod1+4 exec focus_tab.py 4
-bindsym Mod1+5 exec focus_tab.py 5
-bindsym Mod1+6 exec focus_tab.py 6
-bindsym Mod1+7 exec focus_tab.py 7
-bindsym Mod1+8 exec focus_tab.py 8
-bindsym Mod1+9 exec focus_tab.py 9
+# bindsym Mod1+1 exec focus_tab.py 1
+# bindsym Mod1+2 exec focus_tab.py 2
+# bindsym Mod1+3 exec focus_tab.py 3
+# bindsym Mod1+4 exec focus_tab.py 4
+# bindsym Mod1+5 exec focus_tab.py 5
+# bindsym Mod1+6 exec focus_tab.py 6
+# bindsym Mod1+7 exec focus_tab.py 7
+# bindsym Mod1+8 exec focus_tab.py 8
+# bindsym Mod1+9 exec focus_tab.py 9
 
 set $pm DP-0
 set $sm HDMI-0
