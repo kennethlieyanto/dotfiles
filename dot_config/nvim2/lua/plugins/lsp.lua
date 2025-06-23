@@ -25,5 +25,11 @@ return {
       { "mason-org/mason.nvim", opts = {} },
       "neovim/nvim-lspconfig",
     },
+  },
+  {
+    "neovim/nvim-lspconfig",
+    config = function()
+      vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
+    end,
   }
 }
