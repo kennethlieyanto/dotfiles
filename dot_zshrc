@@ -49,3 +49,11 @@ function y() {
 
 export PATH=$PATH:/home/kennethl/.spicetify
 export CHROME_EXECUTABLE=/usr/bin/brave-browser
+
+# pnpm
+export PNPM_HOME="/home/kennethl/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
