@@ -174,8 +174,14 @@ mode "Passthrough Mode - Mod+Esc to exit" {
 bindsym $mod+Escape mode "Passthrough Mode - Mod+Esc to exit"
 
 # Screenshot to clipboard
-bindsym Print exec --no-startup-id maim ~/Pictures/screenshot-$(date +%Y%m%d-%H%M%S).png && maim | xclip -selection clipboard -t image/png
-bindsym $mod+Print exec --no-startup-id maim -s ~/Pictures/screenshot-$(date +%Y%m%d-%H%M%S).png && maim -s | xclip -selection clipboard -t image/png
+# bindsym Print exec --no-startup-id maim ~/Pictures/screenshot-$(date +%Y%m%d-%H%M%S).png && maim | xclip -selection clipboard -t image/png
+# bindsym $mod+Print exec --no-startup-id maim -s ~/Pictures/screenshot-$(date +%Y%m%d-%H%M%S).png && maim -s | xclip -selection clipboard -t image/png
+
+# Screenshot full screen to file + clipboard
+bindsym Print exec --no-startup-id ~/.config/i3/scripts/screenshot.sh
+# Screenshot selection to file + clipboard
+bindsym $mod+Print exec --no-startup-id ~/.config/i3/scripts/screenshot.sh select
+
 
 exec --no-startup-id i3-msg "workspace 1; move workspace to output $pm"
 exec --no-startup-id i3-msg "workspace 11; move workspace to output $sm"
