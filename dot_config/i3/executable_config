@@ -158,7 +158,7 @@ assign [class="pavucontrol"] $ws8
 assign [class="obsidian"] $ws10
 
 bindsym $mod+Return exec --no-startup-id ghostty
-bindsym $mod+Shift+Return exec thunar
+bindsym $mod+Shift+Return exec nautilus
 bindsym $mod+b exec brave-browser
 bindsym $mod+comma exec --no-startup-id "ghostty -e 'nvim ~/.config/i3/config'"
 
