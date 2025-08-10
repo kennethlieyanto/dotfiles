@@ -44,6 +44,11 @@ map <leader>trr <Action>(RiderUnitTestRunContextAction)
 map <leader>trf <Action>(RiderUnitTestSessionRerunFailedTestsAction)
 map <leader>trd <Action>(RiderUnitTestDebugContextAction)
 
+map <leader>trd <Action>(RiderUnitTestDebugContextAction)
+
+map <C-p> <Action>(GotoFile)
+imap <C-p> <Action>(GotoFile)
+
 map <leader>wt <Action>(ActivateUnitTestsToolWindow)
 map <leader>we <Action>(ActivateProjectToolWindow)
 map <leader>ws <Action>(ActivateStructureToolWindow)
@@ -81,4 +86,5 @@ map <C-k> <Action>(HideAllWindows)
 
 map <leader>mdp <Action>(TextEditorWithPreview.Layout.PreviewOnly)
 
+map <leader>trd <Action>(RiderUnitTestDebugContextAction)
 command! Q action CloseAllEditors
