@@ -168,6 +168,8 @@ bindsym $mod+space exec --no-startup-id "rofi -show drun -theme ~/.dotfiles/rofi
 bindsym $mod+d exec --no-startup-id "rofi -show drun -theme ~/.config/rofi/style.rasi"
 bindsym $mod+t exec --no-startup-id "python3 ~/.config/polybar/scripts/obsidian-task.py --switch"
 
+bindsym $mod+u exec --no-startup-id "rofimoji --selector-args='-theme ~/.config/rofi/style.rasi'"
+
 mode "Passthrough Mode - Mod+Esc to exit" {
   bindsym $mod+Escape mode "default"
 }
