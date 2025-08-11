@@ -31,6 +31,10 @@ Plug 'machakann/vim-highlightedyank'
 " Commentary plugin
 Plug 'tpope/vim-commentary'
 
+" Stay in visual mode after shifting left or right
+vnoremap < <gv
+vnoremap > >gv
+
 map <leader><leader> <Action>(GotoFile)
 map <leader>F <Action>(ToggleZenMode)
 
