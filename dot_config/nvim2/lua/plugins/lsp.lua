@@ -2,7 +2,7 @@ return {
   {
     "neovim/nvim-lspconfig",
     dependencies = {
-      "saghen/blink.cmp",
+      'saghen/blink.cmp',
       {
         "folke/lazydev.nvim",
         ft = "lua", -- only load on lua files
@@ -29,10 +29,7 @@ return {
   {
     "neovim/nvim-lspconfig",
     config = function()
-      vim.keymap.set("n", "gd", vim.lsp.buf.definition)
-      -- vim.keymap.set("n", "K", function()
-      --   vim.diagnostic.open_float(nil, { focus = false, scope = "cursor" })
-      -- end, { desc = "Show diagnostics under cursor" })
+      vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
     end,
   },
   {
@@ -71,5 +68,5 @@ return {
         desc = "Quickfix List (Trouble)",
       },
     },
-  },
+  }
 }
