@@ -18,11 +18,11 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 
 vim.keymap.set("n", "<C-q>", "<cmd>only<CR>")
 
-vim.keymap.set('n', '<C-k>', function()
+vim.keymap.set("n", "<C-k>", function()
   if package.loaded["neo-tree"] then
-    vim.cmd('Neotree close')
+    vim.cmd("Neotree close")
   end
-end, { desc = 'Hide sidebars and floating windows', noremap = true, silent = true })
+end, { desc = "Hide sidebars and floating windows", noremap = true, silent = true })
 
 if vim.g.vscode then
   vim.keymap.set("n", "<leader>`", "<Cmd>lua require('vscode').call('vscode-harpoon.addEditor')<CR>")
@@ -35,8 +35,11 @@ if vim.g.vscode then
   vim.keymap.set("n", "<leader>we", "<Cmd>lua require('vscode').call('workbench.view.explorer')<CR>")
   vim.keymap.set("n", "<leader>ws", "<Cmd>lua require('vscode').call('outline.focus')<CR>")
   vim.keymap.set("n", "<leader>wt", "<Cmd>lua require('vscode').call('workbench.view.testing.focus')<CR>")
-  vim.keymap.set("n", "<leader>wx",
-    "<Cmd>lua require('vscode').call('workbench.extensions.action.focusExtensionsView')<CR>")
+  vim.keymap.set(
+    "n",
+    "<leader>wx",
+    "<Cmd>lua require('vscode').call('workbench.extensions.action.focusExtensionsView')<CR>"
+  )
   vim.keymap.set("n", "<leader>wq", "<Cmd>lua require('vscode').call('workbench.panel.markers.view.focus')<CR>")
   vim.keymap.set("n", "<leader>ta", "<Cmd>lua require('vscode').call('testing.runAll')<CR>")
   vim.keymap.set("n", "<leader>tf", "<Cmd>lua require('vscode').call('testing.reRunFailTests')<CR>")
@@ -53,7 +56,6 @@ if vim.g.vscode then
 else
 end
 
--- diagnostic
 local diagnostic_goto = function(next, severity)
   local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
   severity = severity and vim.diagnostic.severity[severity] or nil
