@@ -19,7 +19,7 @@ return {
   {
     "mason-org/mason-lspconfig.nvim",
     opts = {
-      ensure_installed = { "lua_ls", "rust_analyzer" },
+      ensure_installed = { "lua_ls", "rust_analyzer", "csharpier", "omnisharp", "prettier", "rust_analyzer", "tailwindcss", "ts_ls", "yamlls" },
     },
     dependencies = {
       { "mason-org/mason.nvim", opts = {} },
