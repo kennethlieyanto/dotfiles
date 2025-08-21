@@ -15,10 +15,10 @@
           "hide_empty_workspaces": false
         },
         "layout": {
-          "enable": true
+          "enable": false
         },
         "focused_window": {
-          "enable": true,
+          "enable": false,
           "show_icon": true
         }
       }

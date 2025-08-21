@@ -59,5 +59,16 @@
         }
       ]
     }
-  ]
+  ],
+  "stackbar": {
+    "height": 30,
+    "mode": "OnStack",
+    "tabs": {
+      "width": 250,
+      "focused_text": "#ffffff",
+      "unfocused_text": "#7f7f7f",
+      "background": "#000000"
+    }
+  },
+  "mouse_follows_focus": false
 }
