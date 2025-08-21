@@ -1,3 +1,4 @@
+{{- if eq .chezmoi.os "linux" }}
 #!/bin/bash
 
 # Path to zsh
@@ -19,3 +20,4 @@ if [ $? -eq 0 ]; then
 else
   echo "Failed to change the shell."
 fi
+{{- end }}

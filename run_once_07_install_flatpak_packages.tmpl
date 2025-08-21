@@ -1,3 +1,4 @@
+{{- if eq .chezmoi.os "linux" }}
 #!/bin/bash
 
 # Install Flatpak packages
@@ -5,3 +6,4 @@
 flatpak install -y {{ . | quote }}
 {{ end }}
 
+{{- end }}
