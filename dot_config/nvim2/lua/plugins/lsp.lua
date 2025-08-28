@@ -15,6 +15,26 @@ return {
         },
       },
     },
+    config = function()
+      local lspconfig = require("lspconfig")
+
+      -- Extend default client capabilities
+      lspconfig.util.default_config = vim.tbl_extend(
+        "force",
+        lspconfig.util.default_config,
+        {
+          capabilities = vim.tbl_deep_extend(
+            "force",
+            vim.lsp.protocol.make_client_capabilities(),
+            require("lsp-file-operations").default_capabilities()
+          ),
+        }
+      )
+
+      -- Example: configure a language server
+      lspconfig.lua_ls.setup({})
+      lspconfig.tsserver.setup({})
+    end,
   },
   {
     "mason-org/mason-lspconfig.nvim",
@@ -30,9 +50,6 @@ return {
     "neovim/nvim-lspconfig",
     config = function()
       vim.keymap.set("n", "gd", vim.lsp.buf.definition)
-      -- vim.keymap.set("n", "K", function()
-      --   vim.diagnostic.open_float(nil, { focus = false, scope = "cursor" })
-      -- end, { desc = "Show diagnostics under cursor" })
     end,
   },
   {
@@ -71,5 +88,18 @@ return {
         desc = "Quickfix List (Trouble)",
       },
     },
+  },
+  {
+    "antosha417/nvim-lsp-file-operations",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      -- Uncomment whichever supported plugin(s) you use
+      -- "nvim-tree/nvim-tree.lua",
+      -- "nvim-neo-tree/neo-tree.nvim",
+      -- "simonmclean/triptych.nvim"
+    },
+    config = function()
+      require("lsp-file-operations").setup()
+    end,
   },
 }
