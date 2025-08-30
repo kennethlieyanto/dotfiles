@@ -5,6 +5,12 @@
 {{-   $osid = printf "%s-%s-%s" .chezmoi.os .chezmoi.osRelease.id -}}
 {{- end -}}
 
+{{ $isPersonalMachine := promptBoolOnce . "isPersonalMachine" "Is this your personal machine" -}}
+
+{{ $isUsingRazerMouse := promptBoolOnce . "isUsingRazerMouse" "Are you still using razer mouse (lol dawg)" -}}
+
 data:
     email: {{ $email | quote }}
     osid: {{ $osid | quote }}
+    isPersonalMachine: {{ $isPersonalMachine }}
+    isUsingRazerMouse: {{ $isUsingRazerMouse }}

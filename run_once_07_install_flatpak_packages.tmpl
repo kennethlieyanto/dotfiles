@@ -1,9 +1,0 @@
-{{- if eq .chezmoi.os "linux" }}
-#!/bin/bash
-
-# Install Flatpak packages
-{{ range .packages.fedora.flatpak -}}
-flatpak install -y {{ . | quote }}
-{{ end }}
-
-{{- end }}

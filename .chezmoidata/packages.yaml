@@ -2,7 +2,6 @@ packages:
   fedora:
     dnf:
       - "git"
-      - "neovim"
       - "fzf"
       - "tmux"
       - "ripgrep"
@@ -34,9 +33,3 @@ packages:
       - name: "gh-cli"
         repo: "https://cli.github.com/packages/rpm/gh-cli.repo"
         package: "gh"
-    flatpak:
-      - "com.spotify.Client"
-      - "com.discordapp.Discord"
-      - "org.gnome.World.PikaBackup"
-      - "md.obsidian.Obsidian"
-      

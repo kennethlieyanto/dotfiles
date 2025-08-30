@@ -1,4 +1,4 @@
-{{- if eq .chezmoi.os "linux" }}
+{{ if (and (eq .chezmoi.os "linux") (eq .isPersonalMachine true)) -}}
 #!/bin/bash
 
 sudo systemctl enable keyd --now

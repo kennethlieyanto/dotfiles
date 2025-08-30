@@ -1,5 +1,4 @@
-{{- if eq .chezmoi.os "linux" }}
-{{ if eq .chezmoi.osRelease.id "fedora" -}}
+{{ if (and (eq .chezmoi.os "linux") (eq .chezmoi.osRelease.id "fedora")) -}}
 #!/bin/bash
 set -euo pipefail
 
@@ -23,7 +22,5 @@ sudo dnf install -y {{ . | quote }}
 sudo dnf config-manager addrepo --from-repofile={{ .repo | quote }} --overwrite
 sudo dnf install -y {{ .package }}
 {{ end }}
-
-{{ end -}}
 
 {{- end}}
