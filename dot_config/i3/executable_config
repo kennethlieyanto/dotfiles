@@ -1,5 +1,5 @@
-exec dbus-update-activation-environment --all
-exec gnome-keyring-daemon --start --components=secrets
+exec dbus-update-activation-environment --all 
+exec gnome-keyring-daemon --start --components=secrets 
 exec --no-startup-id /usr/libexec/xdg-desktop-portal-gnome
 exec --no-startup-id flatpak run md.obsidian.Obsidian
 # exec --no-startup-id /usr/libexec/xdg-desktop-portal
@@ -124,8 +124,8 @@ bindsym $mod+Shift+2 move container to workspace number $ws2
 bindsym $mod+Shift+3 move container to workspace number $ws3
 bindsym $mod+Shift+4 move container to workspace number $ws4
 bindsym $mod+Shift+5 move container to workspace number $ws5
-bindsym $mod+Shift+z move container to workspace number $ws2
-bindsym $mod+Shift+x move container to workspace number $ws3
+bindsym $mod+Shift+z move container to workspace number $ws6
+bindsym $mod+Shift+x move container to workspace number $ws7
 bindsym $mod+Shift+c move container to workspace number $ws8
 bindsym $mod+Shift+v move container to workspace number $ws9
 bindsym $mod+Shift+g move container to workspace number $ws10
