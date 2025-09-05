@@ -39,20 +39,12 @@ return {
   {
     "mason-org/mason-lspconfig.nvim",
     opts = {
-      ensure_installed = { "lua_ls", "rust_analyzer", "rust_analyzer", "tailwindcss", "ts_ls", "yamlls" },
+      ensure_installed = { "lua_ls", "rust_analyzer", "omnisharp", "rust_analyzer", "tailwindcss", "ts_ls", "yamlls" },
     },
     dependencies = {
       { "mason-org/mason.nvim", opts = {} },
       "neovim/nvim-lspconfig",
     },
-    config = function()
-      require("mason").setup({
-        registries = {
-          "github:mason-org/mason-registry",
-          "github:Crashdummyy/mason-registry",
-        },
-      })
-    end
   },
   {
     "neovim/nvim-lspconfig",
