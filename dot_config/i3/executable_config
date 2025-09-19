@@ -6,6 +6,7 @@ exec --no-startup-id flatpak run com.spotify.Client
 # exec --no-startup-id /usr/libexec/xdg-desktop-portal
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id nitrogen --restore &
+exec_always --no-startup-id pavucontrol
 
 # Window border and font colors
 client.focused          #555555 #555555 #ffffff #555555 #555555
