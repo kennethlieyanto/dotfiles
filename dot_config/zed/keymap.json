@@ -6,7 +6,9 @@
       "ctrl-k": "workspace::CloseAllDocks",
       "ctrl-shift-h": "pane::GoBack",
       "ctrl-shift-l": "pane::GoForward",
-      "ctrl-`": "workspace::ToggleBottomDock"
+      "ctrl-`": "workspace::ToggleBottomDock",
+      "ctrl-~": "workspace::NewCenterTerminal",
+      "ctrl-/": "zed::OpenTasks"
     }
   },
   {
@@ -14,7 +16,8 @@
     "bindings": {
       "ctrl-.": "zed::OpenKeymap",
       "ctrl-k": "workspace::CloseAllDocks",
-      "ctrl-h": null
+      "ctrl-h": null,
+      "ctrl-/": "zed::OpenTasks"
     }
   },
   {
@@ -26,7 +29,13 @@
       "space w x": "zed::Extensions",
       "space w g": "git_panel::ToggleFocus",
       "space F": "workspace::ToggleCenteredLayout",
-      "space /": "pane::DeploySearch"
+      "space /": "pane::DeploySearch",
+      "alt-g": [
+        "task::Spawn",
+        { "task_name": "start lazygit", "reveal_target": "center" }
+      ],
+      "space w Q": "diagnostics::Deploy",
+      "space w q": "diagnostics::DeployCurrentFile"
     }
   },
   {
@@ -36,6 +45,27 @@
       "space Y": ["workspace::SendKeystrokes", "\" + Y"],
       ">": ["workspace::SendKeystrokes", "> g v"],
       "<": ["workspace::SendKeystrokes", "< g v"]
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "alt-g": [
+        "task::Spawn",
+        { "task_name": "start lazygit", "reveal_target": "center" }
+      ]
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-shift-t": "workspace::NewTerminal"
+    }
+  },
+  {
+    "context": "Diagnostics",
+    "bindings": {
+      "ctrl-o": null
     }
   }
 ]
