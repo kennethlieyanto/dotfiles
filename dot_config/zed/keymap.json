@@ -28,5 +28,14 @@
       "space F": "workspace::ToggleCenteredLayout",
       "space /": "pane::DeploySearch"
     }
+  },
+  {
+    "context": "Editor && vim_mode == visual",
+    "bindings": {
+      "space y": ["workspace::SendKeystrokes", "\" + y"],
+      "space Y": ["workspace::SendKeystrokes", "\" + Y"],
+      ">": ["workspace::SendKeystrokes", "> g v"],
+      "<": ["workspace::SendKeystrokes", "< g v"]
+    }
   }
 ]
