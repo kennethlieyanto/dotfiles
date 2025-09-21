@@ -1,5 +1,10 @@
 [
   {
+    "bindings": {
+      "ctrl-`": "terminal_panel::Toggle"
+    }
+  },
+  {
     "context": "Workspace",
     "bindings": {
       "ctrl-.": "zed::OpenKeymap",
@@ -8,7 +13,15 @@
       "ctrl-shift-l": "pane::GoForward",
       "ctrl-`": "workspace::ToggleBottomDock",
       "ctrl-~": "workspace::NewCenterTerminal",
-      "ctrl-/": "zed::OpenTasks"
+      "ctrl-/": "zed::OpenTasks",
+      "space w e": "project_panel::ToggleFocus",
+      "space w x": "zed::Extensions",
+      "space w g": "git_panel::ToggleFocus",
+      "space w d": "debug_panel::ToggleFocus",
+      "space g g": [
+        "task::Spawn",
+        { "task_name": "start lazygit", "reveal_target": "center" }
+      ]
     }
   },
   {
@@ -24,16 +37,9 @@
     "context": "Editor && vim_mode == normal",
     "bindings": {
       "space space": "file_finder::Toggle",
-      "space w e": "project_panel::ToggleFocus",
       "space w s": "outline_panel::ToggleFocus",
-      "space w x": "zed::Extensions",
-      "space w g": "git_panel::ToggleFocus",
       "space F": "workspace::ToggleCenteredLayout",
       "space /": "pane::DeploySearch",
-      "alt-g": [
-        "task::Spawn",
-        { "task_name": "start lazygit", "reveal_target": "center" }
-      ],
       "space w Q": "diagnostics::Deploy",
       "space w q": "diagnostics::DeployCurrentFile"
     }
