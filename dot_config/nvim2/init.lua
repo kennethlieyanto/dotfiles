@@ -17,3 +17,4 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 vim.o.colorcolumn = "80"
+vim.o.wrap = false
