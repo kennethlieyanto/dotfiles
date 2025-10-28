@@ -1,4 +1,5 @@
 {{ if (and (eq .chezmoi.os "linux") (eq .isPersonalMachine true)) -}}
+{{   if not (.chezmoi.kernel.osrelease | lower | contains "microsoft") -}}
 #!/bin/bash
 
 set -euo pipefail
@@ -12,4 +13,5 @@ sudo cp "$HOME/.local/share/chezmoi/keyd/default.conf" /etc/keyd/default.conf
 sudo keyd reload
 
 echo "keyd configuration applied and reloaded successfully."
+{{-   end }}
 {{- end }}
