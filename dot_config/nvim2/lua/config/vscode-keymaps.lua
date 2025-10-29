@@ -12,6 +12,7 @@ vim.keymap.set("n", "<leader>hh", "<Cmd>lua require('vscode').call('vscode-harpo
 vim.keymap.set("n", "<leader>we", "<Cmd>lua require('vscode').call('workbench.view.explorer')<CR>")
 vim.keymap.set("n", "<leader>ws", "<Cmd>lua require('vscode').call('outline.focus')<CR>")
 vim.keymap.set("n", "<leader>wt", "<Cmd>lua require('vscode').call('workbench.view.testing.focus')<CR>")
+vim.keymap.set("n", "<leader>wd", "<Cmd>lua require('vscode').call('workbench.view.debug')<CR>")
 vim.keymap.set(
   "n",
   "<leader>wx",
