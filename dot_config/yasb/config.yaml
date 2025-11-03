@@ -1,4 +1,4 @@
-# This is default and very simple configuration file for Yasb. 
+# This is default and very simple configuration file for Yasb.
 # For more information about configuration options, please visit the Wiki https://github.com/amnweb/yasb/wiki
 watch_stylesheet: true
 watch_config: true
@@ -37,24 +37,26 @@ bars:
       bottom: 0
       right: 6
     widgets:
-      left: [
-        "home",
-        "komorebi_workspaces",
-        "komorebi_active_layout",
-        "active_window",
-      ]
+      left:
+        [
+          "home",
+          "komorebi_workspaces",
+          "komorebi_active_layout",
+          "active_window",
+        ]
       center: [
-        "clock",
-        "apps",
-        "obsidian_task"
-      ]
-      right: [
-        "media",
-        "weather",
-        "microphone",
-        "volume",
-        "notifications",
-        "power_menu"
+          "clock",
+          "apps",
+          # "obsidian_task"
+        ]
+      right:
+        [
+          "media",
+          "weather",
+          "microphone",
+          "volume",
+          "notifications",
+          "power_menu",
         ]
 widgets:
   home:
@@ -62,10 +64,10 @@ widgets:
     options:
       label: "<span>\udb81\udf17</span>"
       menu_list:
-      - { title: "User Home", path: "~" }
-      - { title: "Download", path: "~\\Downloads" }
-      - { title: "Documents", path: "~\\Documents" }
-      - { title: "Pictures", path: "~\\Pictures" }
+        - { title: "User Home", path: "~" }
+        - { title: "Download", path: "~\\Downloads" }
+        - { title: "Documents", path: "~\\Documents" }
+        - { title: "Pictures", path: "~\\Pictures" }
       system_menu: true
       power_menu: true
       blur: false
@@ -246,7 +248,10 @@ widgets:
       app_list:
         - { icon: "\uf422", launch: "search" }
         - { icon: "\ueb03", launch: "cmd /c Taskmgr" }
-        - { icon: "\udb80\ude39",launch: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" }
+        - {
+            icon: "\udb80\ude39",
+            launch: "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
+          }
   notifications:
     type: "yasb.notifications.NotificationsWidget"
     options:
@@ -269,3 +274,4 @@ widgets:
         run_interval: 10000
         return_format: "string"
         hide_empty: false
+
