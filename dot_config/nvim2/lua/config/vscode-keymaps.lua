@@ -39,3 +39,10 @@ vim.keymap.set("i", "<C-s>", "<Cmd>lua require('vscode').call('editor.action.tri
 vim.keymap.set("n", "<leader>wc", "<Cmd>lua require('vscode').call('workbench.panel.chat')<CR>")
 vim.keymap.set("n", "<leader>wg", "<Cmd>lua require('vscode').call('workbench.scm.focus')<CR>")
 vim.keymap.set("n", "<leader>gg", "<Cmd>lua require('vscode').call('lazygit-vscode.toggle')<CR>")
+vim.keymap.set('n', "<leader>ghr", "<Cmd>lua require('vscode').call('git.revertSelectedRanges')<CR>")
+vim.keymap.set('v', "<leader>ghr", "<Cmd>lua require('vscode').call('git.revertSelectedRanges')<CR>")
+
+vim.keymap.set('n', "<leader>ghp", "<Cmd>lua require('vscode').call('editor.action.dirtydiff.next')<CR>")
+
+vim.keymap.set('n', "[c", "<Cmd>lua require('vscode').call('workbench.action.editor.previousChange')<CR>")
+vim.keymap.set('n', "]c", "<Cmd>lua require('vscode').call('workbench.action.editor.nextChange')<CR>")
