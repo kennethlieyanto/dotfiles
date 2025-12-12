@@ -36,7 +36,6 @@
   {
     "context": "Editor && vim_mode == normal",
     "bindings": {
-      "space space": "file_finder::Toggle",
       "space w s": "outline_panel::ToggleFocus",
       "space F": "workspace::ToggleCenteredLayout",
       "space /": "pane::DeploySearch",
