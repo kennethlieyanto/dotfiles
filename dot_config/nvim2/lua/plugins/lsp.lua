@@ -19,17 +19,13 @@ return {
       local lspconfig = require("lspconfig")
 
       -- Extend default client capabilities
-      lspconfig.util.default_config = vim.tbl_extend(
-        "force",
-        lspconfig.util.default_config,
-        {
-          capabilities = vim.tbl_deep_extend(
-            "force",
-            vim.lsp.protocol.make_client_capabilities(),
-            require("lsp-file-operations").default_capabilities()
-          ),
-        }
-      )
+      lspconfig.util.default_config = vim.tbl_extend("force", lspconfig.util.default_config, {
+        capabilities = vim.tbl_deep_extend(
+          "force",
+          vim.lsp.protocol.make_client_capabilities(),
+          require("lsp-file-operations").default_capabilities()
+        ),
+      })
 
       -- Example: configure a language server
       lspconfig.lua_ls.setup({})
