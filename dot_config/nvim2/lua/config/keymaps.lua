@@ -22,6 +22,9 @@ vim.keymap.set("n", "<C-k>", function()
   if package.loaded["neo-tree"] then
     vim.cmd("Neotree close")
   end
+  if package.loaded["trouble"] then
+    require("trouble").close()
+  end
 end, { desc = "Hide sidebars and floating windows", noremap = true, silent = true })
 
 vim.keymap.set("t", "<C-k>", function()
