@@ -27,6 +27,7 @@ return {
       vim.keymap.set("n", "<leader>fk", builtin.keymaps)
       vim.keymap.set("n", "<leader>fs", builtin.lsp_document_symbols)
       vim.keymap.set("n", "<leader>fS", builtin.lsp_dynamic_workspace_symbols)
+      vim.keymap.set("n", "<leader>fr", builtin.oldfiles)
     end,
   },
 }
