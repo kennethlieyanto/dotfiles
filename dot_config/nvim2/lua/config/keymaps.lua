@@ -15,7 +15,6 @@ vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], { desc = "delete to plus regi
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>", { desc = "delete to plus register" })
 
 vim.keymap.set("i", "<C-c>", "<Esc>")
-vim.keymap.set("t", "<C-c>", [[<C-\><C-n>]], { noremap = true, silent = true })
 
 vim.keymap.set("n", "<C-q>", "<cmd>only<CR>")
 
@@ -24,6 +23,12 @@ vim.keymap.set("n", "<C-k>", function()
     vim.cmd("Neotree close")
   end
 end, { desc = "Hide sidebars and floating windows", noremap = true, silent = true })
+
+vim.keymap.set("t", "<C-k>", function()
+  if package.loaded["opencode"] then
+    require("opencode").toggle()
+  end
+end)
 
 local diagnostic_goto = function(next, severity)
   local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
