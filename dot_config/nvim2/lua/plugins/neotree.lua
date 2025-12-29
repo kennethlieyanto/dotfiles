@@ -16,8 +16,8 @@ return {
         visible = true,
       },
       follow_current_file = {
-        enabled = true
-      }
+        enabled = true,
+      },
     },
     sources = { "filesystem", "buffers", "git_status", "document_symbols" },
   },
@@ -27,9 +27,9 @@ return {
       function()
         require("neo-tree.command").execute({ toggle = true })
       end,
-      remap = true
+      remap = true,
     },
     { "<leader>ws", "<cmd>Neotree document_symbols<cr>" },
-
-  }
+  },
+  enabled = false,
 }
