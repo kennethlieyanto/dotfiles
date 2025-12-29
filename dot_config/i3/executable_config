@@ -16,7 +16,6 @@ client.focused_inactive #333333 #222222 #aaaaaa #292d3e #222222
 client.urgent           #ff0000 #900000 #ffffff #ff0000 #900000
 
 for_window [class="^.*"] border pixel 3
-for_window [class=".*"] layout tabbed
 hide_edge_borders smart
 
 font pango:monospace 8
