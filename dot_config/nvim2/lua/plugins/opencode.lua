@@ -15,6 +15,7 @@ return {
     end, { desc = "Execute opencode action…" })
     vim.keymap.set({ "n", "t" }, "<leader>wc", function()
       require("opencode").toggle()
+      vim.cmd("wincmd l") -- immediately focus the window after toggling
     end, { desc = "Toggle opencode" })
 
     -- You may want these if you stick with the opinionated "<C-a>" and "<C-x>" above — otherwise consider "<leader>o".
