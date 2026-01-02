@@ -1,16 +1,26 @@
-{{ $email := promptStringOnce . "email" "What is your email address" -}}
+{{- $email := promptStringOnce . "email" "What is your email address" -}}
+{{- $isDesktop := false -}}
+{{- $isPersonalMachine := false -}}
+{{- $isUsingRazerMouse := false -}}
+{{- $installKeyd := false -}}
 
 {{- $osid := .chezmoi.os -}}
 {{- if hasKey .chezmoi.osRelease "id" -}}
-{{-   $osid = printf "%s-%s-%s" .chezmoi.os .chezmoi.osRelease.id -}}
+  {{- $osid = printf "%s-%s" .chezmoi.os .chezmoi.osRelease.id -}}
 {{- end -}}
 
-{{ $isPersonalMachine := promptBoolOnce . "isPersonalMachine" "Is this your personal machine" -}}
-
-{{ $isUsingRazerMouse := promptBoolOnce . "isUsingRazerMouse" "Are you still using razer mouse (lol dawg)" -}}
+{{- if eq .chezmoi.os "linux" -}}
+    {{- /* Note: Removed the extra "}}" before . "isDesktop" */ -}}
+    {{- $isDesktop = promptBoolOnce . "isDesktop" "Is this a desktop machine?" -}}
+    {{- $isPersonalMachine = promptBoolOnce . "isPersonalMachine" "Is this your personal machine?" -}}
+    {{- $isUsingRazerMouse = promptBoolOnce . "isUsingRazerMouse" "Are you still using razer mouse?" -}}
+    {{- $installKeyd = promptBoolOnce . "installKeyd" "Do you want to install keyd?" -}}
+{{- end -}}
 
 data:
     email: {{ $email | quote }}
     osid: {{ $osid | quote }}
+    isDesktop: {{ $isDesktop }}
     isPersonalMachine: {{ $isPersonalMachine }}
     isUsingRazerMouse: {{ $isUsingRazerMouse }}
+    installKeyd: {{ $installKeyd }}

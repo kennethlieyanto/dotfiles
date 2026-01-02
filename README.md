@@ -2,14 +2,6 @@
 
 Long live GNU Stow...
 
-What it does in a nutshell:
-1. Copy dotfiles as usual
-2. Install packages (fedora only)
-3. Change shell to zsh
-4. Custom prompt with starship
-5. Install ghostty terminfo
-6. Add all personal github's public key pair to authorized keys to that machine
-
 https
 ```sh
 sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply kennethlieyanto
@@ -25,3 +17,17 @@ sh -c "$(curl -fsLS get.chezmoi.io)" -- init --ssh --apply kennethlieyanto
 ```sh
 chezmoi execute-template '{{ .chezmoi.hostname }}'
 ```
+
+## FAQ
+- Why ask "is this desktop or not? Desktop will:
+1. Install things like spicetify
+
+
+- Why ask "is this your personal machine?" Personal machine will:
+1. Put my GitHub public ssh key on the machine
+2. Install and set `zsh` as default shell
+3. Install and set starship for default prompt
+4. Create my standard dir convention of 
+- `~/Projects/github/`
+- `~/Projects/work/`
+- `~/Projects/personal/`

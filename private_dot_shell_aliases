@@ -3,12 +3,10 @@ alias ls='ls --color=auto'
 alias la='ls -a'
 alias ll='ls -al'
 alias grep='grep --color=auto'
-alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 alias sudo='sudo '
 alias lzg='lazygit'
 alias lzd='lazydocker'
-alias t='task'
-alias dwr="dotnet watch run"
-alias dr="dotnet run"
-alias x="exercism"
 alias oc="opencode"
+alias tw="timew"
+alias t="taskwarrior-tui"
+alias ca="chezmoi apply"

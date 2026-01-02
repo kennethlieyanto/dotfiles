@@ -1,4 +1,4 @@
-{{ if (and (eq .chezmoi.os "linux") (eq .isPersonalMachine true)) -}}
+{{ if (and (eq .chezmoi.os "linux") (eq .installKeyd true)) -}}
 {{   if not (.chezmoi.kernel.osrelease | lower | contains "microsoft") -}}
 #!/bin/bash
 

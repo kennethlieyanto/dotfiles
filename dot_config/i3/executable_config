@@ -162,13 +162,14 @@ assign [class="obsidian"] $ws10
 bindsym $mod+Return exec --no-startup-id ghostty
 bindsym $mod+Shift+Return exec nautilus
 bindsym $mod+b exec brave-browser
-bindsym $mod+comma exec --no-startup-id "ghostty -e 'nvim ~/.config/i3/config'"
+bindsym $mod+comma exec --no-startup-id "ghostty -e sh -c 'nvim ~/.config/i3/config'"
 
 bindsym $mod+Shift+r restart
 
 bindsym $mod+space exec --no-startup-id "rofi -show drun -theme ~/.dotfiles/rofi/.config/rofi/material.rasi"
 bindsym $mod+d exec --no-startup-id "rofi -show drun -theme ~/.config/rofi/style.rasi"
-bindsym $mod+t exec --no-startup-id "python3 ~/.config/polybar/scripts/obsidian-task.py --switch"
+bindsym $mod+t exec --no-startup-id "ghostty -e sh -c '~/.local/share/bin/taskwarrior-tui'"
+bindsym $mod+m exec --no-startup-id ghostty -e btop
 
 bindsym $mod+u exec --no-startup-id "rofimoji --selector-args='-theme ~/.config/rofi/style.rasi'"
 
