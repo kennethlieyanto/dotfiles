@@ -56,3 +56,7 @@ if vim.g.vscode then
   require("config.vscode-keymaps") -- if you created a separate file
   -- or just include the keymaps directly in this file
 end
+
+vim.keymap.set("n", "<leader>th", function()
+  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+end, { desc = "Toggle inlay hints" })
