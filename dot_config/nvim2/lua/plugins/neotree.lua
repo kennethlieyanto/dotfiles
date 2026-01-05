@@ -20,6 +20,15 @@ return {
       },
     },
     sources = { "filesystem", "buffers", "git_status", "document_symbols" },
+    window = {
+      mappings = {
+        ["l"] = "open",
+        ["h"] = "close_node",
+        ["H"] = "close_all_nodes",
+        ["v"] = "open_vsplit",
+        ["."] = "toggle_hidden",
+      }
+    }
   },
   keys = {
     {
@@ -31,5 +40,5 @@ return {
     },
     { "<leader>ws", "<cmd>Neotree document_symbols<cr>" },
   },
-  enabled = false,
+  enabled = true,
 }
