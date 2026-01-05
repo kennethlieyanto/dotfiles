@@ -15,6 +15,10 @@ return {
     },
     config = function()
       vim.keymap.set("n", "gd", vim.lsp.buf.definition)
+      vim.keymap.set("n", "gD", function()
+        vim.cmd("vsplit")
+        vim.lsp.buf.definition()
+      end, { desc = "Go to definition in vsplit" })
     end,
   },
   {
