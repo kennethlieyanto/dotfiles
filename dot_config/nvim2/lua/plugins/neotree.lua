@@ -27,6 +27,30 @@ return {
         ["H"] = "close_all_nodes",
         ["v"] = "open_vsplit",
         ["."] = "toggle_hidden",
+        ["O"] = {
+          function(state)
+            local node = state.tree:get_node()
+            local path = node:get_id()
+            if node.type == "directory" then
+              vim.cmd("Oil " .. path)
+            else
+              vim.cmd("Oil " .. vim.fn.fnamemodify(path, ":h"))
+            end
+          end,
+          desc = "Open in Oil",
+        },
+        ["w"] = "null",
+        ["s"] = "null",
+        ["<C-q>"] = {
+          function(state)
+            local node = state.tree:get_node()
+            if node.type ~= "directory" then
+              vim.cmd("caddfile " .. vim.fn.fnameescape(node:get_id()))
+            end
+          end,
+          desc = "Add file to quickfix",
+        },
+        ["S"] = "null",
       }
     }
   },
