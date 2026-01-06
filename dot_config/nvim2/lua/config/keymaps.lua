@@ -19,27 +19,34 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 vim.keymap.set("n", "<C-q>", "<cmd>only<CR>")
 
 vim.keymap.set("n", "<C-k>", function()
-  if package.loaded["neo-tree"] then
-    vim.cmd("Neotree close")
-  end
-  if package.loaded["trouble"] then
-    require("trouble").close()
-  end
+	if package.loaded["neo-tree"] then
+		vim.cmd("Neotree close")
+	end
+	if package.loaded["trouble"] then
+		require("trouble").close()
+	end
+	for _, win in ipairs(vim.api.nvim_tabpage_list_wins(0)) do
+		local buf = vim.api.nvim_win_get_buf(win)
+		if vim.bo[buf].buftype == "terminal" then
+			vim.api.nvim_win_close(win, true)
+		end
+	end
 end, { desc = "Hide sidebars and floating windows", noremap = true, silent = true })
 
 vim.keymap.set("t", "<C-k>", function()
-  if package.loaded["opencode"] then
-    require("opencode").toggle()
-  end
+	if package.loaded["opencode"] then
+		require("opencode").toggle()
+	end
 end)
 
 local diagnostic_goto = function(next, severity)
-  local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
-  severity = severity and vim.diagnostic.severity[severity] or nil
-  return function()
-    go({ severity = severity })
-  end
+	local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
+	severity = severity and vim.diagnostic.severity[severity] or nil
+	return function()
+		go({ severity = severity })
+	end
 end
+
 vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
 vim.keymap.set("n", "]d", diagnostic_goto(true), { desc = "Next Diagnostic" })
 vim.keymap.set("n", "[d", diagnostic_goto(false), { desc = "Prev Diagnostic" })
@@ -53,10 +60,10 @@ vim.keymap.set("x", "<", "<gv", { noremap = true, silent = true })
 vim.keymap.set("x", ">", ">gv", { noremap = true, silent = true })
 
 if vim.g.vscode then
-  require("config.vscode-keymaps") -- if you created a separate file
-  -- or just include the keymaps directly in this file
+	require("config.vscode-keymaps") -- if you created a separate file
+	-- or just include the keymaps directly in this file
 end
 
 vim.keymap.set("n", "<leader>th", function()
-  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 end, { desc = "Toggle inlay hints" })
