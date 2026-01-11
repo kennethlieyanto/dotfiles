@@ -18,26 +18,43 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 
 vim.keymap.set("n", "<C-q>", "<cmd>only<CR>")
 
+-- vim.keymap.set("n", "<adfkjsc-k>", function()
+-- 	if package.loaded["neo-tree"] then
+-- 		vim.cmd("Neotree close")
+-- 	end
+-- 	if package.loaded["trouble"] then
+-- 		require("trouble").close()
+-- 	end
+-- 	if package.loaded["opencode"] then
+-- 		local target_filetype = "opencode_terminal"
+--
+-- 		local found = false
+-- 		for _, win in ipairs(vim.api.nvim_list_wins()) do
+-- 			local buf = vim.api.nvim_win_get_buf(win)
+-- 			if vim.bo[buf].filetype == target_filetype then
+-- 				found = true
+-- 				break
+-- 			end
+-- 		end
+--
+-- 		if found then
+-- 			print("asdf")
+-- 			require("opencode").toggle()
+-- 		end
+-- 	end
+-- end, { desc = "Hide sidebars and floating windows", noremap = true, silent = true })
+
+-- Close all splits with unlisted buffers
 vim.keymap.set("n", "<C-k>", function()
-	if package.loaded["neo-tree"] then
-		vim.cmd("Neotree close")
-	end
-	if package.loaded["trouble"] then
-		require("trouble").close()
-	end
-	for _, win in ipairs(vim.api.nvim_tabpage_list_wins(0)) do
-		local buf = vim.api.nvim_win_get_buf(win)
-		if vim.bo[buf].buftype == "terminal" then
-			vim.api.nvim_win_close(win, true)
+	for win = vim.fn.winnr("$"), 1, -1 do
+		local buf = vim.fn.winbufnr(win)
+		if vim.fn.buflisted(buf) == 0 then
+			vim.cmd(win .. "wincmd w")
+			vim.cmd("close")
 		end
 	end
-end, { desc = "Hide sidebars and floating windows", noremap = true, silent = true })
-
-vim.keymap.set("t", "<C-k>", function()
-	if package.loaded["opencode"] then
-		require("opencode").toggle()
-	end
-end)
+	vim.cmd("stopinsert")
+end, { desc = "Close unlisted buffer splits" })
 
 local diagnostic_goto = function(next, severity)
 	local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
