@@ -1,5 +1,5 @@
 if not vim.g.vscode then
-  return
+	return
 end
 
 vim.keymap.set("n", "<leader>`", "<Cmd>lua require('vscode').call('vscode-harpoon.addEditor')<CR>")
@@ -14,9 +14,9 @@ vim.keymap.set("n", "<leader>ws", "<Cmd>lua require('vscode').call('outline.focu
 vim.keymap.set("n", "<leader>wt", "<Cmd>lua require('vscode').call('workbench.view.testing.focus')<CR>")
 vim.keymap.set("n", "<leader>wd", "<Cmd>lua require('vscode').call('workbench.view.debug')<CR>")
 vim.keymap.set(
-  "n",
-  "<leader>wx",
-  "<Cmd>lua require('vscode').call('workbench.extensions.action.focusExtensionsView')<CR>"
+	"n",
+	"<leader>wx",
+	"<Cmd>lua require('vscode').call('workbench.extensions.action.focusExtensionsView')<CR>"
 )
 vim.keymap.set("n", "<leader>wq", "<Cmd>lua require('vscode').call('workbench.panel.markers.view.focus')<CR>")
 vim.keymap.set("n", "<leader>ta", "<Cmd>lua require('vscode').call('testing.runAll')<CR>")
@@ -39,10 +39,8 @@ vim.keymap.set("i", "<C-s>", "<Cmd>lua require('vscode').call('editor.action.tri
 vim.keymap.set("n", "<leader>wc", "<Cmd>lua require('vscode').call('workbench.panel.chat')<CR>")
 vim.keymap.set("n", "<leader>wg", "<Cmd>lua require('vscode').call('workbench.scm.focus')<CR>")
 vim.keymap.set("n", "<leader>gg", "<Cmd>lua require('vscode').call('lazygit-vscode.toggle')<CR>")
-vim.keymap.set('n', "<leader>ghr", "<Cmd>lua require('vscode').call('git.revertSelectedRanges')<CR>")
-vim.keymap.set('v', "<leader>ghr", "<Cmd>lua require('vscode').call('git.revertSelectedRanges')<CR>")
-
-vim.keymap.set('n', "<leader>ghp", "<Cmd>lua require('vscode').call('editor.action.dirtydiff.next')<CR>")
-
-vim.keymap.set('n', "[c", "<Cmd>lua require('vscode').call('workbench.action.editor.previousChange')<CR>")
-vim.keymap.set('n', "]c", "<Cmd>lua require('vscode').call('workbench.action.editor.nextChange')<CR>")
+vim.keymap.set("n", "<leader>ghr", "<Cmd>lua require('vscode').call('git.revertSelectedRanges')<CR>")
+vim.keymap.set("v", "<leader>ghr", "<Cmd>lua require('vscode').call('git.revertSelectedRanges')<CR>")
+vim.keymap.set("n", "<leader>ghp", "<Cmd>lua require('vscode').call('editor.action.dirtydiff.next')<CR>")
+vim.keymap.set("n", "[c", "<Cmd>lua require('vscode').call('workbench.action.editor.previousChange')<CR>")
+vim.keymap.set("n", "]c", "<Cmd>lua require('vscode').call('workbench.action.editor.nextChange')<CR>")

@@ -60,10 +60,9 @@ vim.keymap.set("x", "<", "<gv", { noremap = true, silent = true })
 vim.keymap.set("x", ">", ">gv", { noremap = true, silent = true })
 
 if vim.g.vscode then
-	require("config.vscode-keymaps") -- if you created a separate file
-	-- or just include the keymaps directly in this file
+	require("config.vscode-keymaps")
 end
 
 vim.keymap.set("n", "<leader>th", function()
-	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+	require("config.inlay-hints").toggle()
 end, { desc = "Toggle inlay hints" })
