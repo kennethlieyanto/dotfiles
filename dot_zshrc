@@ -69,3 +69,30 @@ export NVM_DIR="$HOME/.nvm"
 
 # bun completions
 [ -s "/home/kennethl/.bun/_bun" ] && source "/home/kennethl/.bun/_bun"
+
+# nvm auto use
+# # Source - https://stackoverflow.com/a
+# Posted by Rotareti, modified by community. See post 'Timeline' for change history
+# Retrieved 2026-01-12, License - CC BY-SA 4.0
+
+# place this after nvm initialization!
+autoload -U add-zsh-hook
+load-nvmrc() {
+  local node_version="$(nvm version)"
+  local nvmrc_path="$(nvm_find_nvmrc)"
+
+  if [ -n "$nvmrc_path" ]; then
+    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+
+    if [ "$nvmrc_node_version" = "N/A" ]; then
+      nvm install
+    elif [ "$nvmrc_node_version" != "$node_version" ]; then
+      nvm use
+    fi
+  elif [ "$node_version" != "$(nvm version default)" ]; then
+    nvm use default
+  fi
+}
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc
+
