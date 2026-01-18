@@ -1,17 +1,9 @@
+---@type LazySpec
 return {
 	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
 			"saghen/blink.cmp",
-			{
-				"folke/lazydev.nvim",
-				ft = "lua",
-				opts = {
-					library = {
-						{ path = "${3rd}/luv/library", words = { "vim%.uv" } },
-					},
-				},
-			},
 		},
 		config = function()
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition)
@@ -64,5 +56,37 @@ return {
 		config = function()
 			require("lsp-file-operations").setup()
 		end,
+	},
+	{
+		"saghen/blink.cmp",
+		dependencies = { "rafamadriz/friendly-snippets" },
+		version = "1.*",
+		opts = {
+			keymap = { preset = "enter" },
+			sources = {
+				default = { "lazydev", "lsp", "path", "snippets", "buffer" },
+				providers = {
+					lazydev = {
+						name = "LazyDev",
+						module = "lazydev.integrations.blink",
+						score_offset = 100,
+					},
+				},
+			},
+			appearance = {
+				nerd_font_variant = "mono",
+			},
+			fuzzy = { implementation = "prefer_rust_with_warning" },
+			signature = { enabled = true },
+		},
+	},
+	{
+		"folke/lazydev.nvim",
+		ft = "lua",
+		opts = {
+			library = {
+				{ path = "${3rd}/luv/library", words = { "vim%.uv" } },
+			},
+		},
 	},
 }

@@ -1,11 +1,29 @@
+---@type LazySpec
 return {
 	"NickvanDyke/opencode.nvim",
 	dependencies = {
-		{ "folke/snacks.nvim", opts = {
-			input = {},
-			picker = {},
-			terminal = {},
-		} },
+		{
+			"folke/snacks.nvim",
+			opts = {
+				input = {
+
+					win = {
+						keys = {
+							i_tab = {
+								"<tab>",
+								function()
+									local opencode = require("opencode")
+									opencode.command("agent.cycle")
+								end,
+								mode = "i",
+							},
+						},
+					},
+				},
+				picker = {},
+				terminal = {},
+			},
+		},
 	},
 	config = function()
 		local opencode = require("opencode")
@@ -53,6 +71,10 @@ return {
 			if vim.bo.filetype == "opencode_terminal" then
 				opencode.toggle()
 			end
+		end)
+
+		vim.keymap.set("n", "<c-tab>", function()
+			opencode.command("agent.cycle")
 		end)
 	end,
 }

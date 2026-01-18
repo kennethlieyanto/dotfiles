@@ -18,32 +18,6 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 
 vim.keymap.set("n", "<C-q>", "<cmd>only<CR>")
 
--- vim.keymap.set("n", "<adfkjsc-k>", function()
--- 	if package.loaded["neo-tree"] then
--- 		vim.cmd("Neotree close")
--- 	end
--- 	if package.loaded["trouble"] then
--- 		require("trouble").close()
--- 	end
--- 	if package.loaded["opencode"] then
--- 		local target_filetype = "opencode_terminal"
---
--- 		local found = false
--- 		for _, win in ipairs(vim.api.nvim_list_wins()) do
--- 			local buf = vim.api.nvim_win_get_buf(win)
--- 			if vim.bo[buf].filetype == target_filetype then
--- 				found = true
--- 				break
--- 			end
--- 		end
---
--- 		if found then
--- 			print("asdf")
--- 			require("opencode").toggle()
--- 		end
--- 	end
--- end, { desc = "Hide sidebars and floating windows", noremap = true, silent = true })
-
 -- Close all splits with unlisted buffers
 vim.keymap.set("n", "<C-k>", function()
 	for win = vim.fn.winnr("$"), 1, -1 do
@@ -83,3 +57,7 @@ end
 vim.keymap.set("n", "<leader>th", function()
 	require("config.inlay-hints").toggle()
 end, { desc = "Toggle inlay hints" })
+
+-- Move by visual lines when wrap is enabled
+vim.keymap.set("n", "j", "gj", { desc = "Move down by visual line" })
+vim.keymap.set("n", "k", "gk", { desc = "Move up by visual line" })

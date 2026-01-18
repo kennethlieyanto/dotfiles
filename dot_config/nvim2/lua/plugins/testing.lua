@@ -1,19 +1,20 @@
+---@type LazySpec
 return {
 	-- {
-	--   "nvim-neotest/neotest",
-	--   dependencies = {
-	--     "nvim-neotest/nvim-nio",
-	--     "nvim-lua/plenary.nvim",
-	--     "antoinemadec/FixCursorHold.nvim",
-	--     "nvim-treesitter/nvim-treesitter"
-	--   },
-	--   opts = {
-	--     adapters = {
-	--       require("neotest-vstest")
-	--     }
-	--   }
+	-- 	"nvim-neotest/neotest",
+	-- 	dependencies = {
+	-- 		"nvim-neotest/nvim-nio",
+	-- 		"nvim-lua/plenary.nvim",
+	-- 		"antoinemadec/FixCursorHold.nvim",
+	-- 		"nvim-treesitter/nvim-treesitter",
+	-- 	},
+	-- 	opts = {
+	-- 		adapters = {
+	-- 			require("neotest-vstest"),
+	-- 		},
+	-- 	},
 	-- },
 	-- {
-	--   "nsidorenco/neotest-vstest"
-	-- }
+	-- 	"nsidorenco/neotest-vstest",
+	-- },
 }
