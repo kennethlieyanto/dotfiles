@@ -48,5 +48,9 @@ export GTK_THEME=Adwaita:dark
 export FLYCTL_INSTALL="$HOME/.fly"
 export PATH="$FLYCTL_INSTALL/bin:$PATH"
 
+export ORACLE_HOME=/opt/oracle/instantclient_11_2
+export LD_LIBRARY_PATH=$ORACLE_HOME
+export PATH=$ORACLE_HOME:$PATH
+
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
