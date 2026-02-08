@@ -1,4 +1,3 @@
----@type LazySpec
 return {
 	"nvim-neo-tree/neo-tree.nvim",
 	dependencies = {
@@ -22,7 +21,7 @@ return {
 					enabled = true,
 				},
 			},
-			sources = { "filesystem", "buffers", "git_status", "document_symbols" },
+			sources = { "filesystem" },
 			window = {
 				mappings = {
 					["l"] = "open",
@@ -40,8 +39,6 @@ return {
 							vim.cmd("Oil " .. vim.fn.fnamemodify(path, ":h"))
 						end
 					end,
-					["w"] = "null",
-					["s"] = "null",
 					["<C-q>"] = function(state)
 						---@diagnostic disable-next-line: undefined-field
 						local node = state.tree:get_node()
@@ -49,7 +46,6 @@ return {
 							vim.cmd("caddfile " .. vim.fn.fnameescape(node:get_id()))
 						end
 					end,
-					["S"] = "null",
 					["/"] = "filter_on_submit",
 					["z"] = "fuzzy_finder",
 					["<C-c>"] = "clear_filter",

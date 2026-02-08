@@ -1,4 +1,3 @@
----@type LazySpec
 return {
 	"nvim-flutter/flutter-tools.nvim",
 	lazy = false,
@@ -6,4 +5,5 @@ return {
 		"nvim-lua/plenary.nvim",
 	},
 	config = true,
+	enabled = false,
 }

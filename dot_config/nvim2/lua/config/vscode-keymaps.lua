@@ -34,7 +34,7 @@ vim.keymap.set("n", "<leader><leader>", "<Cmd>lua require('vscode').call('workbe
 vim.keymap.set("n", "gd", "<Cmd>lua require('vscode').call('editor.action.revealDefinition')<CR>")
 vim.keymap.set("n", "<leader>fs", "<Cmd>lua require('vscode').call('workbench.action.gotoSymbol')<CR>")
 vim.keymap.set("n", "<leader>fS", "<Cmd>lua require('vscode').call('workbench.action.showAllSymbols')<CR>")
-vim.keymap.set("n", "gD", "<Cmd>lua require('vscode').call('editor.action.revealDefinitionAside')<CR>")
+vim.keymap.set("n", "gv", "<Cmd>lua require('vscode').call('editor.action.revealDefinitionAside')<CR>")
 vim.keymap.set("i", "<C-s>", "<Cmd>lua require('vscode').call('editor.action.triggerParameterHints')<CR>")
 vim.keymap.set("n", "<leader>wc", "<Cmd>lua require('vscode').call('workbench.panel.chat')<CR>")
 vim.keymap.set("n", "<leader>wg", "<Cmd>lua require('vscode').call('workbench.scm.focus')<CR>")

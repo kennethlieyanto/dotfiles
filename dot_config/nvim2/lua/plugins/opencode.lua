@@ -1,4 +1,3 @@
----@type LazySpec
 return {
 	"NickvanDyke/opencode.nvim",
 	dependencies = {

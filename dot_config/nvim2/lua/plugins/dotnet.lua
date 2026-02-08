@@ -1,4 +1,3 @@
----@type LazySpec
 return {
 	"GustavEikaas/easy-dotnet.nvim",
 	dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim" },
@@ -22,9 +21,10 @@ return {
 			},
 		})
 
-		vim.keymap.set("n", "<leader>wt", function()
-			dotnet.testrunner()
-		end)
+		-- vim.keymap.set("n", "<leader>wt", function()
+		-- 	dotnet.testrunner()
+		-- end)
 	end,
 	cond = not vim.g.vscode,
+	enabled = false,
 }

@@ -21,4 +21,10 @@ require("lazy").setup({
 	spec = {
 		{ import = "plugins" },
 	},
+	install = { colorscheme = { "catppuccin" } },
+	defaults = {
+		cond = function()
+			return not vim.g.vscode
+		end,
+	},
 })

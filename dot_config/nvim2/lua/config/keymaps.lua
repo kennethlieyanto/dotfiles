@@ -50,14 +50,6 @@ vim.keymap.set("n", "[w", diagnostic_goto(false, "WARN"), { desc = "Prev Warning
 vim.keymap.set("x", "<", "<gv", { noremap = true, silent = true })
 vim.keymap.set("x", ">", ">gv", { noremap = true, silent = true })
 
-if vim.g.vscode then
-	require("config.vscode-keymaps")
-end
-
-vim.keymap.set("n", "<leader>th", function()
-	require("config.inlay-hints").toggle()
-end, { desc = "Toggle inlay hints" })
-
 -- Move by visual lines when wrap is enabled
 vim.keymap.set("n", "j", "gj", { desc = "Move down by visual line" })
 vim.keymap.set("n", "k", "gk", { desc = "Move up by visual line" })
