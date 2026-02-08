@@ -61,3 +61,7 @@ end, { desc = "Toggle inlay hints" })
 -- Move by visual lines when wrap is enabled
 vim.keymap.set("n", "j", "gj", { desc = "Move down by visual line" })
 vim.keymap.set("n", "k", "gk", { desc = "Move up by visual line" })
+
+vim.keymap.set("n", "<leader>wx", function()
+	vim.cmd("Lazy")
+end)
