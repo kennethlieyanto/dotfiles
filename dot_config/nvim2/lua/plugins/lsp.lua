@@ -19,7 +19,15 @@ return {
 			ensure_installed = { "lua_ls@3.16.4", "rust_analyzer", "tailwindcss", "ts_ls", "yamlls", "biome" },
 		},
 		dependencies = {
-			{ "mason-org/mason.nvim", opts = {} },
+			{
+				"mason-org/mason.nvim",
+				opts = {
+					registries = {
+						"github:mason-org/mason-registry",
+						"github:Crashdummyy/mason-registry",
+					},
+				},
+			},
 			"neovim/nvim-lspconfig",
 		},
 	},
