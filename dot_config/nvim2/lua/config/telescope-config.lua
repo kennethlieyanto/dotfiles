@@ -3,8 +3,6 @@ local M = {}
 local is_inside_work_tree = {}
 
 M.project_files = function()
-	local opts = {}
-
 	local cwd = vim.fn.getcwd()
 	if is_inside_work_tree[cwd] == nil then
 		vim.fn.system("git rev-parse --is-inside-work-tree")
@@ -12,9 +10,11 @@ M.project_files = function()
 	end
 
 	if is_inside_work_tree[cwd] then
-		require("telescope.builtin").git_files(opts)
+		require("telescope.builtin").git_files({
+			show_untracked = true,
+		})
 	else
-		require("telescope.builtin").find_files(opts)
+		require("telescope.builtin").find_files({})
 	end
 end
 
