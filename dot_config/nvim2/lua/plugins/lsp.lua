@@ -37,17 +37,17 @@ return {
 		cmd = "Trouble",
 		keys = {
 			{
-				"<leader>wQ",
+				"<leader>wd",
 				"<cmd>Trouble diagnostics toggle<cr>",
 				desc = "Diagnostics (Trouble)",
 			},
 			{
-				"<leader>wq",
+				"<leader>wD",
 				"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
 				desc = "Buffer Diagnostics (Trouble)",
 			},
 			{
-				"<leader>wf",
+				"<leader>wq",
 				"<cmd>Trouble qflist toggle<cr>",
 				desc = "Quickfix List (Trouble)",
 			},
