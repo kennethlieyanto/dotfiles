@@ -2,7 +2,7 @@
 
 font-size = 13
 
-theme = catppuccin-mocha.conf
+theme = Ayu
 
 keybind = ctrl+shift+%=new_split:right
 keybind = alt+shift+'=new_split:down
