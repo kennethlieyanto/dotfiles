@@ -1,47 +1,88 @@
 [
+  // Depends on default keybindings is vscode
+  // Default clearings
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-f12": null,
+    },
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-.": null,
+    },
+  },
+  {
+    "context": "AgentPanel",
+    "bindings": {
+      "ctrl-shift-.": null,
+    },
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-shift-.": null,
+    },
+  },
   {
     "bindings": {
-      "ctrl-`": "terminal_panel::Toggle"
-    }
+      "f12": "dev::OpenKeyContextView",
+      "ctrl-.": "zed::OpenKeymapFile",
+      "ctrl-,": "zed::OpenSettingsFile",
+      "ctrl->": "zed::OpenKeymap",
+      "ctrl-<": "zed::OpenSettings",
+    },
   },
   {
     "context": "Workspace",
     "bindings": {
-      "ctrl-.": "zed::OpenKeymap",
       "ctrl-k": "workspace::CloseAllDocks",
       "ctrl-shift-h": "pane::GoBack",
       "ctrl-shift-l": "pane::GoForward",
       "ctrl-`": "workspace::ToggleBottomDock",
       "ctrl-~": "workspace::NewCenterTerminal",
       "ctrl-/": "zed::OpenTasks",
-      "space w e": "project_panel::ToggleFocus",
-      "space w x": "zed::Extensions",
-      "space w g": "git_panel::ToggleFocus",
-      "space w d": "debug_panel::ToggleFocus",
-      "space g g": [
-        "task::Spawn",
-        { "task_name": "start lazygit", "reveal_target": "center" }
-      ]
-    }
+    },
+  },
+  {
+    "context": "FileFinder && Picker",
+    "bindings": {
+      "ctrl-v": "file_finder::ToggleSplitMenu",
+    },
+  },
+  {
+    "context": "ProjectPanel",
+    "bindings": {
+      "space w e": "workspace::ToggleLeftDock",
+      "l": "project_panel::Open",
+      "ctrl-v": "project_panel::OpenSplitVertical",
+      "a": "project_panel::NewFile",
+    },
   },
   {
     "context": "Editor",
     "bindings": {
-      "ctrl-.": "zed::OpenKeymap",
       "ctrl-k": "workspace::CloseAllDocks",
       "ctrl-h": null,
-      "ctrl-/": "zed::OpenTasks"
-    }
+      "ctrl-/": "zed::OpenTasks",
+    },
   },
   {
-    "context": "Editor && vim_mode == normal",
+    "context": "Pane > Editor && vim_mode == normal",
     "bindings": {
       "space w s": "outline_panel::ToggleFocus",
       "space F": "workspace::ToggleCenteredLayout",
       "space /": "pane::DeploySearch",
-      "space w Q": "diagnostics::Deploy",
-      "space w q": "diagnostics::DeployCurrentFile"
-    }
+      "space c a": "editor::ToggleCodeActions",
+      "space w x": "zed::Extensions",
+      "space w g": "git_panel::ToggleFocus",
+      "space w d": "debug_panel::ToggleFocus",
+      "space w e": "project_panel::ToggleFocus",
+      "space x": "repl::Run",
+      "space X": "repl::ClearOutputs",
+      "space w c": "agent::ToggleFocus",
+    },
   },
   {
     "context": "Editor && vim_mode == visual",
@@ -49,28 +90,32 @@
       "space y": ["workspace::SendKeystrokes", "\" + y"],
       "space Y": ["workspace::SendKeystrokes", "\" + Y"],
       ">": ["workspace::SendKeystrokes", "> g v"],
-      "<": ["workspace::SendKeystrokes", "< g v"]
-    }
-  },
-  {
-    "context": "Workspace",
-    "bindings": {
-      "alt-g": [
-        "task::Spawn",
-        { "task_name": "start lazygit", "reveal_target": "center" }
-      ]
-    }
+      "<": ["workspace::SendKeystrokes", "< g v"],
+      "space c c": "agent::AddSelectionToThread",
+    },
   },
   {
     "context": "Terminal",
     "bindings": {
-      "ctrl-shift-t": "workspace::NewTerminal"
-    }
+      "ctrl-shift-t": "workspace::NewTerminal",
+    },
   },
   {
-    "context": "Diagnostics",
+    "context": "right_dock == agent_panel",
     "bindings": {
-      "ctrl-o": null
-    }
-  }
+      "space w c": "workspace::ToggleRightDock",
+    },
+  },
+  {
+    "context": "AcpThread > vim_mode == normal",
+    "bindings": {
+      "ctrl-x n": "agent::NewThread",
+    },
+  },
+  {
+    "context": "AcpThread > MessageEditor > vim_mode == normal",
+    "bindings": {
+      "tab": "agent::CycleModeSelector",
+    },
+  },
 ]

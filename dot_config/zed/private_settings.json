@@ -1,41 +1,47 @@
 {
+  "agent_servers": {
+    "opencode": {
+      "type": "registry"
+    }
+  },
+  "show_edit_predictions": false,
   "agent": {
     "default_model": {
-      "provider": "google",
-      "model": "gemini-2.5-flash"
+      "provider": "openai",
+      "model": "gpt-5.1",
     },
     "favorite_models": [],
-    "model_parameters": []
+    "model_parameters": [],
   },
   "calls": {
-    "mute_on_join": true
+    "mute_on_join": true,
   },
   "git": {
     "path_style": "file_name_first",
     "hunk_style": "staged_hollow",
     "branch_picker": {
-      "show_author_name": true
+      "show_author_name": true,
     },
     "blame": {
-      "show_avatar": true
+      "show_avatar": true,
     },
     "inline_blame": {
       "show_commit_summary": false,
-      "enabled": false
-    }
+      "enabled": false,
+    },
   },
   "notification_panel": {
-    "button": true
+    "button": true,
   },
   "collaboration_panel": {
-    "button": true
+    "button": true,
   },
   "git_panel": {
     "tree_view": false,
     "collapse_untracked_diff": false,
     "sort_by_path": false,
     "status_style": "label_color",
-    "button": true
+    "button": true,
   },
   "window_decorations": "client",
   "bottom_dock_layout": "full",
@@ -108,7 +114,7 @@
   "edit_predictions": {
     "provider": "zed",
   },
-  "icon_theme": "Soft Charmed Icons",
+  "icon_theme": "JetBrains New UI Icons (Dark)",
   "outline_panel": {
     "folder_icons": true,
     "file_icons": true,
@@ -139,7 +145,7 @@
   },
   "terminal": {
     "toolbar": {
-      "breadcrumbs": false
+      "breadcrumbs": false,
     },
     "dock": "bottom",
     "font_family": "JetBrainsMono Nerd Font",
