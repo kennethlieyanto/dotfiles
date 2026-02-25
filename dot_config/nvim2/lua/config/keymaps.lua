@@ -20,22 +20,22 @@ vim.keymap.set("n", "<C-q>", "<cmd>only<CR>")
 
 -- Close all splits with unlisted buffers
 vim.keymap.set("n", "<C-k>", function()
-	for win = vim.fn.winnr("$"), 1, -1 do
-		local buf = vim.fn.winbufnr(win)
-		if vim.fn.buflisted(buf) == 0 then
-			vim.cmd(win .. "wincmd w")
-			vim.cmd("close")
-		end
-	end
-	vim.cmd("stopinsert")
+    for win = vim.fn.winnr("$"), 1, -1 do
+        local buf = vim.fn.winbufnr(win)
+        if vim.fn.buflisted(buf) == 0 then
+            vim.cmd(win .. "wincmd w")
+            vim.cmd("close")
+        end
+    end
+    vim.cmd("stopinsert")
 end, { desc = "Close unlisted buffer splits" })
 
 local diagnostic_goto = function(next, severity)
-	local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
-	severity = severity and vim.diagnostic.severity[severity] or nil
-	return function()
-		go({ severity = severity })
-	end
+    local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
+    severity = severity and vim.diagnostic.severity[severity] or nil
+    return function()
+        go({ severity = severity })
+    end
 end
 
 vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
@@ -55,5 +55,5 @@ vim.keymap.set("n", "j", "gj", { desc = "Move down by visual line" })
 vim.keymap.set("n", "k", "gk", { desc = "Move up by visual line" })
 
 vim.keymap.set("n", "<leader>wx", function()
-	vim.cmd("Lazy")
+    vim.cmd("Lazy")
 end)
