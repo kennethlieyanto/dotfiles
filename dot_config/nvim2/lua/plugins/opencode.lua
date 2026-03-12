@@ -2,6 +2,7 @@ return {
     "NickvanDyke/opencode.nvim",
     dependencies = {
         {
+            ---@module "snacks"
             "folke/snacks.nvim",
             opts = {
                 input = {
@@ -45,15 +46,41 @@ return {
                     },
                 },
                 picker = {},
-                terminal = {},
             },
         },
     },
     config = function()
-        local opencode = require("opencode")
+        local opencode_cmd = 'opencode --port'
+        ---@type snacks.terminal.Opts
+        local snacks_terminal_opts = {
+            win = {
+                position = 'right',
+                enter = false,
+                width = 0.45,
+                on_win = function(win)
+                    -- Set up keymaps and cleanup for an arbitrary terminal
+                    require('opencode.terminal').setup(win.win)
+                end,
+            },
+        }
 
         ---@type opencode.Opts
-        vim.g.opencode_opts = {}
+        vim.g.opencode_opts = {
+            server = {
+                start = function()
+                    require('snacks.terminal').open(opencode_cmd, snacks_terminal_opts)
+                end,
+                stop = function()
+                    require('snacks.terminal').get(opencode_cmd, snacks_terminal_opts):close()
+                end,
+                toggle = function()
+                    require('snacks.terminal').toggle(opencode_cmd, snacks_terminal_opts)
+                end,
+            },
+        }
+
+        local opencode = require("opencode")
+
         vim.o.autoread = true
 
         vim.keymap.set({ "n", "x" }, "<leader>cc", function()
