@@ -33,7 +33,7 @@ return {
                                     -- Focus the opencode terminal window
                                     for _, win in ipairs(vim.api.nvim_list_wins()) do
                                         local buf = vim.api.nvim_win_get_buf(win)
-                                        if vim.bo[buf].filetype == "opencode_terminal" then
+                                        if vim.bo[buf].buftype == "terminal" then
                                             vim.api.nvim_set_current_win(win)
                                             break
                                         end
@@ -57,12 +57,10 @@ return {
         vim.o.autoread = true
 
         vim.keymap.set({ "n", "x" }, "<leader>cc", function()
-            local target_filetype = "opencode_terminal"
-
             local found = false
             for _, win in ipairs(vim.api.nvim_list_wins()) do
                 local buf = vim.api.nvim_win_get_buf(win)
-                if vim.bo[buf].filetype == target_filetype then
+                if vim.bo[buf].buftype == "terminal" then
                     found = true
                     break
                 end
@@ -86,13 +84,13 @@ return {
         vim.keymap.set("n", "-", "<C-x>", { desc = "Decrement", noremap = true })
 
         vim.keymap.set("t", "<C-c>", function()
-            if vim.bo.filetype == "opencode_terminal" then
+            if vim.bo.buftype == "terminal" then
                 vim.cmd("wincmd h")
             end
         end)
 
         vim.keymap.set("t", "<C-k>", function()
-            if vim.bo.filetype == "opencode_terminal" then
+            if vim.bo.buftype == "terminal" then
                 opencode.toggle()
             end
         end)
@@ -105,7 +103,7 @@ return {
             local current_win = vim.api.nvim_get_current_win()
             for _, win in ipairs(vim.api.nvim_list_wins()) do
                 local buf = vim.api.nvim_win_get_buf(win)
-                if vim.bo[buf].filetype == "opencode_terminal" then
+                if vim.bo[buf].buftype == "terminal" then
                     opencode.command("session.list")
                     vim.api.nvim_set_current_win(win)
                     vim.api.nvim_feedkeys(vim.keycode("<Esc>"), "t", false)
