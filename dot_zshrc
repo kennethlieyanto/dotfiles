@@ -70,4 +70,7 @@ export PATH=/home/kennethl/.opencode/bin:$PATH
 # direnv
 if command -v direnv &> /dev/null; then
     eval "$(direnv hook zsh)"
+
+# kubectl autocomplete
+source <(kubectl completion zsh)
 fi
