@@ -21,7 +21,7 @@ return {
     {
         "mason-org/mason-lspconfig.nvim",
         opts = {
-            ensure_installed = { "lua_ls@3.16.4", "rust_analyzer", "tailwindcss", "ts_ls", "yamlls", "biome" },
+            ensure_installed = { "lua_ls", "rust_analyzer", "tailwindcss", "ts_ls", "yamlls", "biome" },
         },
         dependencies = {
             {
