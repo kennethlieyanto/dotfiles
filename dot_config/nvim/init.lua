@@ -4,7 +4,7 @@ require("config.autocmds")
 require("config.telescope-config")
 
 if vim.g.vscode then
-	require("config.vscode-keymaps")
+    require("config.vscode-keymaps")
 end
 
 vim.keymap.set("n", "<space>x", ":.lua<CR>")
@@ -29,12 +29,22 @@ vim.opt.winborder = "rounded"
 local severity = vim.diagnostic.severity
 
 vim.diagnostic.config({
-	signs = {
-		text = {
-			[severity.ERROR] = " ",
-			[severity.WARN] = " ",
-			[severity.HINT] = "󰠠 ",
-			[severity.INFO] = " ",
-		},
-	},
+    signs = {
+        text = {
+            [severity.ERROR] = " ",
+            [severity.WARN] = " ",
+            [severity.HINT] = "󰠠 ",
+            [severity.INFO] = " ",
+        },
+    },
+})
+
+vim.lsp.config('*', {
+    capabilities = {
+        workspace = {
+            didChangeWatchedFiles = {
+                dynamicRegistration = true,
+            },
+        },
+    },
 })
