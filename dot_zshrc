@@ -58,8 +58,6 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-# opencode
-export PATH=/home/kennethl/.opencode/bin:$PATH
 
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
@@ -74,3 +72,5 @@ if command -v direnv &> /dev/null; then
 # kubectl autocomplete
 source <(kubectl completion zsh)
 fi
+
+export BWS_ACCESS_TOKEN=0.2366ddf6-59dc-436e-bdbe-b4490044abda.xuPFt9CYPYYnqRfXoVgJC3b4oDqveM:9a8q0sOhxCyfXbbTIhHDXw==
