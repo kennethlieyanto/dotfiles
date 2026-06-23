@@ -1,9 +1,0 @@
-editor=nvim
-
-report.next.filter=status:pending -WAITING limit:6
-
-
-news.version=3.4.2
-sync.server.url=https:\/\/taskchampion.tail.kennethlieyanto.com
-sync.server.client_id=a329d160-5fd1-42c9-b8c1-dd661111b653
-sync.encryption_secret=thoo4Sha

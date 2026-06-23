@@ -1,0 +1,7 @@
+[core]
+	editor = nvim
+[init]
+	defaultBranch = main
+[user]
+	name = Kenneth Manuel Lieyanto
+	email = "kennethlieyanto99@gmail.com"
