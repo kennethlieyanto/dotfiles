@@ -1,6 +1,0 @@
-{{ if (and (eq .chezmoi.os "linux") (eq .isUsingRazerMouse true)) -}}
-#!/bin/bash
-# Plugdev group is required by openrazer for razer mouse in Linux
-
-sudo gpasswd -a $USER plugdev
-{{- end }}
