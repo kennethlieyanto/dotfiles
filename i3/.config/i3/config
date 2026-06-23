@@ -191,3 +191,4 @@ bindsym $mod+Print exec --no-startup-id ~/.config/i3/scripts/screenshot.sh selec
 exec --no-startup-id i3-msg "workspace 1; move workspace to output $pm"
 exec --no-startup-id i3-msg "workspace 11; move workspace to output $sm"
 
+# test will this change propagated
