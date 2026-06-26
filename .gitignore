@@ -1,0 +1,14 @@
+# Auto-generated from repo-list.txt — do not edit directly.
+# Run bootstrap.sh to regenerate.
+/tmux/
+/tmuxinator/
+/task/
+/systemd/
+/zed/
+/rofi/
+/nvim/
+/polybar/
+/opencode/
+/i3/
+/ghostty/
+.current-machine

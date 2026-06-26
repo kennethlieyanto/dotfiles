@@ -1,0 +1,11 @@
+tmux,~/.config/tmux
+tmuxinator,~/.config/tmuxinator
+task,~/.config/task
+systemd,~/.config/systemd
+zed,~/.config/zed
+rofi,~/.config/rofi
+nvim,~/.config/nvim
+polybar,~/.config/polybar
+opencode,~/.config/opencode
+i3,~/.config/i3
+ghostty,~/.config/ghostty

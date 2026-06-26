@@ -1,0 +1,4 @@
+tmux
+tmuxinator
+task
+opencode
