@@ -3,3 +3,5 @@ tmuxinator
 task
 opencode
 herdr
+bugwarrior
+systemd

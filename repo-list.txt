@@ -10,3 +10,4 @@ opencode,~/.config/opencode
 i3,~/.config/i3
 ghostty,~/.config/ghostty
 herdr,~/.config/herdr
+bugwarrior,~/.config/bugwarrior
