@@ -3,3 +3,6 @@ default:
 
 stow:
     @bash bootstrap.sh
+
+pull:
+    @bash pull.sh
