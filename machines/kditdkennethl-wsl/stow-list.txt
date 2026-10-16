@@ -6,3 +6,4 @@ herdr
 bugwarrior
 systemd
 nvim
+direnv
