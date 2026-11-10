@@ -2,6 +2,7 @@ tmux
 tmuxinator
 task
 opencode
+ai-usagebar
 herdr
 bugwarrior
 systemd
